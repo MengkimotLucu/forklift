@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <!-- Definitions for gradients -->
+  <defs>
+    <!-- Background Glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#EEF2F6" stop-opacity="1" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </radialGradient>
+    
+    <!-- Body Gradient -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0392B" /> <!-- Brand Accent Red -->
+      <stop offset="100%" stop-color="#962D22" />
+    </linearGradient>
+    
+    <!-- Chassis Gradient -->
+    <linearGradient id="chassisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D3436" stroke="#2d3436" /> <!-- Brand Slate Gray -->
+      <stop offset="100%" stop-color="#1E272E" />
+    </linearGradient>
+    
+    <!-- Metal/Mast Gradient -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BDC3C7" />
+      <stop offset="50%" stop-color="#ECF0F1" />
+      <stop offset="100%" stop-color="#95A5A6" />
+    </linearGradient>
+
+    <!-- Cargo Box Gradient -->
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" /> <!-- Blue Accent -->
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    
+    <!-- Shadow Effect -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#1E272E" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background Decorative Circle -->
+  <circle cx="300" cy="225" r="180" fill="url(#bgGlow)" />
+  <circle cx="180" cy="180" r="100" fill="#3B82F6" opacity="0.04" />
+  <circle cx="420" cy="260" r="80" fill="#C0392B" opacity="0.03" />
+  
+  <!-- Grid Lines for Technical/Industrial Feel -->
+  <g stroke="#E2E8F0" stroke-width="1" opacity="0.5">
+    <line x1="100" y1="340" x2="500" y2="340" /> <!-- Ground -->
+    <line x1="150" y1="100" x2="150" y2="340" stroke-dasharray="5,5" />
+    <line x1="450" y1="100" x2="450" y2="340" stroke-dasharray="5,5" />
+  </g>
+
+  <!-- Main Illustration Group with Shadow -->
+  <g filter="url(#dropShadow)">
+    
+    <!-- GROUND SHADOW (Forklift & Cargo) -->
+    <ellipse cx="320" cy="340" rx="190" ry="12" fill="#2D3436" opacity="0.15" />
+    <ellipse cx="140" cy="340" rx="60" ry="6" fill="#2D3436" opacity="0.2" />
+
+    <!-- LIFTED CARGO CONTAINER (On the Left) -->
+    <g transform="translate(45, 120)">
+      <!-- Pallet -->
+      <rect x="10" y="160" width="130" height="12" rx="2" fill="#D35400" />
+      <rect x="25" y="172" width="15" height="8" fill="#A04000" />
+      <rect x="68" y="172" width="15" height="8" fill="#A04000" />
+      <rect x="110" y="172" width="15" height="8" fill="#A04000" />
+      
+      <!-- Cargo Container Box -->
+      <rect x="15" y="40" width="120" height="120" rx="6" fill="url(#boxGrad)" />
+      <!-- Container Stripes (Corrugation) -->
+      <line x1="35" y1="50" x2="35" y2="150" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+      <line x1="55" y1="50" x2="55" y2="150" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+      <line x1="75" y1="50" x2="75" y2="150" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+      <line x1="95" y1="50" x2="95" y2="150" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+      <line x1="115" y1="50" x2="115" y2="150" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+      
+      <!-- Safe Handling Icons on Box -->
+      <path d="M45,70 L55,70 M50,65 L50,75" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.8" /> <!-- Plus/Cross -->
+      <rect x="45" y="85" width="20" height="12" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.8" />
+      <path d="M45,110 Q55,100 65,110" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.8" /> <!-- Upward Arrow/Curve -->
+      <polygon points="55,102 51,107 59,107" fill="#FFFFFF" opacity="0.8" />
+    </g>
+
+    <!-- FORKLIFT BODY & MAST ASSEMBLY -->
+    <g transform="translate(150, 60)">
+      
+      <!-- THE FORKS (Steel Forks extending under the pallet) -->
+      <!-- Horizontal part -->
+      <path d="M5,240 L130,240 L130,246 L35,246 L25,252 L5,252 Z" fill="url(#metalGrad)" />
+      <!-- Vertical back bracket of fork -->
+      <rect x="5" y="160" width="12" height="85" rx="2" fill="url(#metalGrad)" stroke="#7F8C8D" stroke-width="1" />
+
+      <!-- VERTICAL MAST (Elevator tracks) -->
+      <!-- Outer Mast -->
+      <rect x="25" y="40" width="14" height="220" rx="3" fill="url(#metalGrad)" />
+      <rect x="39" y="40" width="4" height="220" fill="#7F8C8D" />
+      <!-- Inner Mast Section -->
+      <rect x="29" y="80" width="6" height="180" fill="#BDC3C7" opacity="0.8" />
+      <!-- Hydraulic Cylinder (Center) -->
+      <rect x="18" y="100" width="7" height="160" fill="#34495E" />
+      <rect x="20" y="60" width="3" height="45" fill="#BDC3C7" />
+      <!-- Chains & Pulley representation -->
+      <circle cx="21" cy="55" r="5" fill="#7F8C8D" />
+      <line x1="17" y1="55" x2="17" y2="260" stroke="#34495E" stroke-width="2" />
+
+      <!-- CABIN STRUCTURE (Cage) -->
+      <!-- Overhead Guard / Roof -->
+      <rect x="120" y="55" width="110" height="8" rx="2" fill="#2D3436" />
+      <!-- Front Pillar (Angled) -->
+      <line x1="55" y1="160" x2="125" y2="60" stroke="#2D3436" stroke-width="8" stroke-linecap="round" />
+      <line x1="55" y1="160" x2="125" y2="60" stroke="#BDC3C7" stroke-width="2" stroke-linecap="round" />
+      <!-- Rear Pillar -->
+      <line x1="210" y1="160" x2="225" y2="63" stroke="#2D3436" stroke-width="8" stroke-linecap="round" />
+      <!-- Inner support bars -->
+      <line x1="160" y1="63" x2="160" y2="160" stroke="#2D3436" stroke-width="4" />
+      <line x1="190" y1="63" x2="190" y2="160" stroke="#2D3436" stroke-width="4" />
+
+      <!-- ENGINE COVER & SEAT (Internal parts) -->
+      <rect x="120" y="145" width="85" height="35" rx="4" fill="#7F8C8D" />
+      <!-- Seat backrest -->
+      <path d="M190,148 L195,115 C196,110 202,110 203,115 L203,148 Z" fill="#2D3436" />
+      <!-- Steering Wheel -->
+      <line x1="110" y1="125" x2="125" y2="142" stroke="#2D3436" stroke-width="4" />
+      <circle cx="108" cy="123" r="8" fill="none" stroke="#2D3436" stroke-width="3" />
+
+      <!-- MINIMALIST OPERATOR SILHOUETTE -->
+      <g opacity="0.85">
+        <!-- Head -->
+        <circle cx="180" cy="98" r="10" fill="#2D3436" />
+        <!-- Helmet (Safety Orange/Yellow) -->
+        <path d="M170,98 C170,88 190,88 190,98 Z" fill="#F39C12" />
+        <path d="M167,98 L193,98" stroke="#F39C12" stroke-width="2" stroke-linecap="round" />
+        <!-- Body/Torso -->
+        <path d="M165,110 Q180,110 190,120 L195,148 L170,148 Z" fill="#2D3436" />
+        <!-- Arm steering -->
+        <path d="M172,115 L145,123 L125,128" fill="none" stroke="#2D3436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- High-vis vest overlay -->
+        <path d="M170,112 L185,112 L190,128 L172,135 Z" fill="#27AE60" /> <!-- Green safety vest -->
+        <line x1="176" y1="112" x2="176" y2="135" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="184" y1="112" x2="184" y2="128" stroke="#FFFFFF" stroke-width="2" />
+      </g>
+
+      <!-- COUNTERWEIGHT & BACK PANEL (Accent Red) -->
+      <!-- Main Red Body -->
+      <path d="M110,160 L240,160 Q260,160 260,185 L260,230 Q260,245 240,245 L70,245 L70,200 L110,200 Z" fill="url(#bodyGrad)" />
+      
+      <!-- Chassis/Base plate (Dark Slate Gray) -->
+      <path d="M50,235 L260,235 L260,248 Q260,252 250,252 L50,252 Z" fill="url(#chassisGrad)" />
+
+      <!-- Exhaust Pipe (Top Back) -->
+      <rect x="235" y="100" width="8" height="60" rx="2" fill="#7F8C8D" />
+      <path d="M235,100 Q235,85 245,82" stroke="#7F8C8D" stroke-width="6" fill="none" stroke-linecap="round" />
+      <!-- Subtle exhaust smoke -->
+      <circle cx="253" cy="74" r="5" fill="#BDC3C7" opacity="0.2" />
+      <circle cx="262" cy="65" r="8" fill="#BDC3C7" opacity="0.15" />
+
+      <!-- Safety Amber Strobe Light on Roof -->
+      <rect x="217" y="47" width="8" height="8" rx="1" fill="#F1C40F" />
+      <circle cx="221" cy="42" r="3" fill="#F39C12" />
+      <path d="M221,42 L221,30" stroke="#F1C40F" stroke-width="1" opacity="0.5" />
+      
+      <!-- Headlights (Front Mast) -->
+      <path d="M55,140 Q45,140 45,145 L45,152 Q45,157 55,157 Z" fill="#F1C40F" opacity="0.9" />
+      <polygon points="45,144 15,135 15,162 45,153" fill="none" stroke="#F39C12" stroke-width="1" fill-opacity="0.15" opacity="0.3" />
+
+      <!-- WHEELS -->
+      <!-- Front Wheel (Large) -->
+      <g transform="translate(100, 245)">
+        <circle cx="0" cy="0" r="36" fill="#2D3436" />
+        <circle cx="0" cy="0" r="32" fill="#1E272E" />
+        <!-- Treads -->
+        <circle cx="0" cy="0" r="34" fill="none" stroke="#2D3436" stroke-width="3" stroke-dasharray="10,8" />
+        <circle cx="0" cy="0" r="22" fill="#7F8C8D" /> <!-- Hubcap -->
+        <circle cx="0" cy="0" r="16" fill="#BDC3C7" />
+        <circle cx="0" cy="0" r="8" fill="#2D3436" />
+        <!-- Bolts -->
+        <circle cx="0" cy="-12" r="2.5" fill="#FFFFFF" />
+        <circle cx="10" cy="-6" r="2.5" fill="#FFFFFF" />
+        <circle cx="10" cy="6" r="2.5" fill="#FFFFFF" />
+        <circle cx="0" cy="12" r="2.5" fill="#FFFFFF" />
+        <circle cx="-10" cy="6" r="2.5" fill="#FFFFFF" />
+        <circle cx="-10" cy="-6" r="2.5" fill="#FFFFFF" />
+      </g>
+
+      <!-- Rear Wheel (Small) -->
+      <g transform="translate(225, 252)">
+        <circle cx="0" cy="0" r="28" fill="#2D3436" />
+        <circle cx="0" cy="0" r="24" fill="#1E272E" />
+        <!-- Treads -->
+        <circle cx="0" cy="0" r="26" fill="none" stroke="#2D3436" stroke-width="2" stroke-dasharray="8,6" />
+        <circle cx="0" cy="0" r="16" fill="#7F8C8D" /> <!-- Hubcap -->
+        <circle cx="0" cy="0" r="10" fill="#BDC3C7" />
+        <circle cx="0" cy="0" r="5" fill="#2D3436" />
+        <!-- Bolts -->
+        <circle cx="0" cy="-7" r="1.5" fill="#FFFFFF" />
+        <circle cx="6" cy="-3.5" r="1.5" fill="#FFFFFF" />
+        <circle cx="6" cy="3.5" r="1.5" fill="#FFFFFF" />
+        <circle cx="0" cy="7" r="1.5" fill="#FFFFFF" />
+        <circle cx="-6" cy="3.5" r="1.5" fill="#FFFFFF" />
+        <circle cx="-6" cy="-3.5" r="1.5" fill="#FFFFFF" />
+      </g>
+
+    </g>
+  </g>
+</svg>
