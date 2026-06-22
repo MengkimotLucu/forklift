@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Rewrite EN SPA routes
+  RewriteRule ^en/(home|fleet|gallery|areas|testimonials|faq)/?$ en/index.html [L,NC]
+
+  # Rewrite ID SPA routes
+  RewriteRule ^(beranda|armada|galeri|wilayah|layanan|faq)/?$ index.html [L,NC]
+
+  # Serve HTML files without extension (Clean URLs)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*?)/?$ $1.html [L]
+</IfModule>

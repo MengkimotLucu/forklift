@@ -93,25 +93,155 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
     wrapper.addEventListener('mouseleave', resetAutoSlide);
 
-    // Smooth scroll for anchors & update URL hash
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-                // Update URL hash without page jump after scroll completes to help Google index Sitelinks
-                setTimeout(() => {
-                    if (history.pushState) {
-                        history.pushState(null, null, targetId);
+    // Clean URL Routing System
+    const isLocalFile = window.location.protocol === 'file:';
+    
+    // Route mappings
+    const routes = {
+        // ID routes
+        '/beranda': '#home',
+        '/armada': '#unit',
+        '/galeri': '#galeri',
+        '/wilayah': '#wilayah',
+        '/layanan': '#layanan',
+        '/faq': '#faq',
+        // EN routes
+        '/en/home': '#home',
+        '/en/fleet': '#unit',
+        '/en/gallery': '#galeri',
+        '/en/areas': '#wilayah',
+        '/en/testimonials': '#layanan',
+        '/en/faq': '#faq'
+    };
+
+    // Helper to scroll to section
+    function scrollToSection(targetSelector, smooth = true) {
+        const target = document.querySelector(targetSelector);
+        if (target) {
+            target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' });
+        }
+    }
+
+    // Handle routing based on path
+    function handleRoute(path, smooth = true) {
+        const cleanPath = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+        const selector = routes[cleanPath];
+        if (selector) {
+            scrollToSection(selector, smooth);
+            return true;
+        }
+        if (cleanPath === '/' || cleanPath === '/en' || cleanPath === '/en/') {
+            scrollToSection('#home', smooth);
+            return true;
+        }
+        return false;
+    }
+
+    // Intercept clicks on links
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        if (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('javascript:')) {
+            return;
+        }
+
+        const cleanPath = href.split('#')[0];
+        
+        if (isLocalFile) {
+            // Local file navigation helper
+            if (href.startsWith('/')) {
+                e.preventDefault();
+                const inEnFolder = window.location.pathname.replace(/\\/g, '/').includes('/en/');
+                const hash = href.includes('#') ? '#' + href.split('#')[1] : '';
+                
+                if (cleanPath === '/' || cleanPath === '/beranda') {
+                    window.location.href = (inEnFolder ? '../index.html' : 'index.html') + hash;
+                } else if (cleanPath === '/en' || cleanPath === '/en/' || cleanPath === '/en/home') {
+                    window.location.href = (inEnFolder ? 'index.html' : 'en/index.html') + hash;
+                } else if (routes[cleanPath] !== undefined) {
+                    const sectionHash = routes[cleanPath];
+                    if (inEnFolder) {
+                        if (cleanPath.startsWith('/en/')) {
+                            window.location.href = 'index.html' + sectionHash;
+                        } else {
+                            window.location.href = '../index.html' + sectionHash;
+                        }
                     } else {
-                        window.location.hash = targetId;
+                        if (cleanPath.startsWith('/en/')) {
+                            window.location.href = 'en/index.html' + sectionHash;
+                        } else {
+                            window.location.href = 'index.html' + sectionHash;
+                        }
                     }
-                }, 800);
+                } else {
+                    // It is a subpage (e.g. /sewa-forklift-3-ton-bandung)
+                    const subPath = cleanPath.substring(1);
+                    if (inEnFolder) {
+                        if (subPath.startsWith('en/')) {
+                            window.location.href = subPath.substring(3) + '.html' + hash;
+                        } else {
+                            window.location.href = '../' + subPath + '.html' + hash;
+                        }
+                    } else {
+                        if (subPath.startsWith('en/')) {
+                            window.location.href = subPath + '.html' + hash;
+                        } else {
+                            window.location.href = subPath + '.html' + hash;
+                        }
+                    }
+                }
+            } else if (href.startsWith('#')) {
+                e.preventDefault();
+                scrollToSection(href, true);
             }
-        });
+            return;
+        }
+
+        // Production routing
+        const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html' || 
+                             window.location.pathname === '/en' || window.location.pathname === '/en/' || 
+                             window.location.pathname === '/en/index.html';
+
+        if (isHomepage && (routes[cleanPath] !== undefined || cleanPath === '/' || cleanPath === '/en' || cleanPath === '/en/')) {
+            e.preventDefault();
+
+            const hamburger = document.getElementById('hamburger-btn');
+            const nav = document.getElementById('nav-menu');
+            if (hamburger && nav) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+
+            history.pushState(null, null, cleanPath);
+            handleRoute(cleanPath, true);
+        } else if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href;
+            const foundPath = Object.keys(routes).find(key => routes[key] === targetId && key.startsWith(window.location.pathname.startsWith('/en') ? '/en' : '/'));
+            if (foundPath && isHomepage) {
+                history.pushState(null, null, foundPath);
+            }
+            scrollToSection(targetId, true);
+        }
     });
+
+    // Handle back/forward navigation
+    window.addEventListener('popstate', () => {
+        if (!isLocalFile) {
+            handleRoute(window.location.pathname, true);
+        }
+    });
+
+    // On page load, scroll to section based on pathname
+    if (!isLocalFile) {
+        setTimeout(() => {
+            handleRoute(window.location.pathname, false);
+        }, 150);
+    }
 
     // Handle Window Resize (re-calculate positions and recreate dots)
     window.addEventListener('resize', () => {

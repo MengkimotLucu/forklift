@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/en/(home|fleet|gallery|areas|testimonials|faq)",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/(beranda|armada|galeri|wilayah|layanan|faq)",
+      "destination": "/index.html"
+    }
+  ]
+}

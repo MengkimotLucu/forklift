@@ -1,0 +1,125 @@
+# SPA Navigation rewrites for English section
+[[redirects]]
+  from = "/en/home"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/fleet"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/gallery"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/areas"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/testimonials"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/faq"
+  to = "/en/index.html"
+  status = 200
+
+# SPA Navigation rewrites for Indonesian section
+[[redirects]]
+  from = "/beranda"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/armada"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/galeri"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/wilayah"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/layanan"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/index.html"
+  status = 200
+
+# Clean URLs for capacity subpages (Indonesian)
+[[redirects]]
+  from = "/sewa-forklift-3-ton-bandung"
+  to = "/sewa-forklift-3-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-forklift-5-ton-bandung"
+  to = "/sewa-forklift-5-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-forklift-7-ton-bandung"
+  to = "/sewa-forklift-7-ton-bandung.html"
+  status = 200
+
+# Clean URLs for localized subpages (Indonesian)
+[[redirects]]
+  from = "/rental-forklift-cimareme-batujajar"
+  to = "/rental-forklift-cimareme-batujajar.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-forklift-rancaekek"
+  to = "/sewa-forklift-rancaekek.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-forklift-gedebage"
+  to = "/sewa-forklift-gedebage.html"
+  status = 200
+
+# Clean URLs for capacity subpages (English)
+[[redirects]]
+  from = "/en/rent-forklift-3-ton-bandung"
+  to = "/en/rent-forklift-3-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-forklift-5-ton-bandung"
+  to = "/en/rent-forklift-5-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-forklift-7-ton-bandung"
+  to = "/en/rent-forklift-7-ton-bandung.html"
+  status = 200
+
+# Clean URLs for localized subpages (English)
+[[redirects]]
+  from = "/en/rental-forklift-cimareme-batujajar"
+  to = "/en/rental-forklift-cimareme-batujajar.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-forklift-rancaekek"
+  to = "/en/rent-forklift-rancaekek.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-forklift-gedebage"
+  to = "/en/rent-forklift-gedebage.html"
+  status = 200
