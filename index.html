@@ -37,7 +37,9 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Schema Markup -->
@@ -150,14 +152,38 @@
             }
           },
           {
-            "@type": "Question",
-            "name": "Apa saja metode pembayaran yang diterima?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Kami menerima pembayaran via Transfer Bank atau Cash. Untuk pelanggan korporat dengan kontrak jangka panjang, kami menyediakan skema termin pembayaran sesuai kesepakatan."
-            }
+          "@type": "Question",
+          "name": "Apa saja metode pembayaran yang diterima?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kami menerima pembayaran via Transfer Bank atau Cash. Untuk pelanggan korporat dengan kontrak jangka panjang, kami menyediakan skema termin pembayaran sesuai kesepakatan."
           }
-        ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Sewa Forklift Diesel Bandung & Cimahi",
+        "serviceType": "Rental Forklift Diesel 3 Ton, 5 Ton, 7 Ton",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Satria Forklift"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Bandung"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Cimahi"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Bandung Barat"
+          }
+        ],
+        "description": "Jasa rental forklift diesel kapasitas 3 sampai 7 ton untuk wilayah Bandung Raya dan Cimahi. Operator bersertifikat SIO aktif, unit prima siap kerja berat."
       }
     ]
     </script>
@@ -178,7 +204,7 @@
     <header>
         <div class="container">
             <a href="#home" class="logo">
-                <i class="fas fa-truck-pickup"></i> SATRIA<span>FORKLIFT</span>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="12" x2="20" y2="52" /><line x1="24" y1="12" x2="24" y2="52" stroke-width="2.5" opacity="0.7" /><path d="M4 44h16M4 44v4" /><path d="M20 32h20l12 10v6H20" fill="rgba(192,57,43,0.1)" /><path d="M28 32v-12h16l4 12" /><circle cx="28" cy="50" r="6" fill="currentColor" /><circle cx="48" cy="50" r="5" fill="currentColor" /></svg> SATRIA<span>FORKLIFT</span>
             </a>
             <nav id="nav-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <a itemprop="url" href="#home"><span itemprop="name">Beranda</span></a>
@@ -230,7 +256,7 @@
         </section>
 
         <!-- Pengertian Forklift Section -->
-        <section id="about" class="reveal" style="background: var(--bg-alt); padding: 100px 0 160px;">
+        <section id="about" class="reveal" style="background: var(--bg-alt);">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-content">
@@ -508,6 +534,14 @@
                         <img src="assets/images/gallery_6.png" alt="Sewa forklift 3 ton di Cimahi" loading="lazy">
                         <div class="gallery-caption">GUDANG CIMAHI</div>
                     </div>
+                    <div class="gallery-item cta-tile">
+                        <div class="gallery-cta-content">
+                            <i class="fas fa-headset cta-tile-icon"></i>
+                            <h3>SATRIA FORKLIFT</h3>
+                            <p>Layanan Sewa Cepat 24 Jam</p>
+                            <a href="https://wa.me/6281282215544?text=Halo%20Satria%20Forklift,%20saya%20mau%20tanya%20sewa%20unit%20untuk%20wilayah%20..." class="btn-tile-wa" title="Hubungi WhatsApp Satria Forklift" aria-label="Hubungi WhatsApp Satria Forklift"><i class="fab fa-whatsapp"></i> Hubungi WA</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -748,114 +782,109 @@
                     <h2>Pertanyaan Umum (FAQ)</h2>
                     <p>Beberapa hal yang sering ditanyakan pelanggan kami.</p>
                 </div>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Bagaimana cara pemesanan unit?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <div class="faq-container-grid">
+                    <div class="faq-column">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Bagaimana cara pemesanan unit?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Sangat mudah! Anda cukup klik tombol WhatsApp, kirimkan lokasi proyek/gudang,
+                                    kapasitas yang dibutuhkan, dan jadwal kerja. Tim kami akan segera memberikan
+                                    penawaran harga terbaik.</p>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>Sangat mudah! Anda cukup klik tombol WhatsApp, kirimkan lokasi proyek/gudang,
-                                kapasitas yang dibutuhkan, dan jadwal kerja. Tim kami akan segera memberikan
-                                penawaran harga terbaik.</p>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Berapa kapasitas forklift yang tersedia?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Kami menyediakan unit forklift diesel dengan kapasitas 3 Ton, 5 Ton, dan 7 Ton. Semua
+                                    unit dalam kondisi prima dan siap kerja berat.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Berapa kapasitas forklift yang tersedia?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Apakah biaya sudah termasuk Mob-Demob?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Biaya Mobilisasi-Demobilisasi (kirim unit) dihitung terpisah berdasarkan jarak lokasi
+                                    proyek dari pool kami. Untuk area Bandung kota, kami memberikan tarif yang sangat
+                                    kompetitif.</p>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>Kami menyediakan unit forklift diesel dengan kapasitas 3 Ton, 5 Ton, dan 7 Ton. Semua
-                                unit dalam kondisi prima dan siap kerja berat.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Apakah biaya sudah termasuk Mob-Demob?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Biaya Mobilisasi-Demobilisasi (kirim unit) dihitung terpisah berdasarkan jarak lokasi
-                                proyek dari pool kami. Untuk area Bandung kota, kami memberikan tarif yang sangat
-                                kompetitif.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Berapa jam kerja dalam satu shift?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Satu shift kerja adalah 8 jam (termasuk 1 jam istirahat). Kami juga melayani
-                                pengerjaan lembur atau shift malam sesuai kebutuhan operasional Anda.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Bagaimana perhitungan biaya lembur (Overtime)?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Jika pemakaian melebihi 8 jam dalam satu shift, akan dikenakan biaya tambahan per jam
-                                (overtime) yang nilainya sudah disepakati di awal kontrak.</p>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Berapa jam kerja dalam satu shift?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Satu shift kerja adalah 8 jam (termasuk 1 jam istirahat). Kami juga melayani
+                                    pengerjaan lembur atau shift malam sesuai kebutuhan operasional Anda.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Apakah operator memiliki sertifikat SIO?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                    <div class="faq-column">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Bagaimana perhitungan biaya lembur (Overtime)?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Jika pemakaian melebihi 8 jam dalam satu shift, akan dikenakan biaya tambahan per jam
+                                    (overtime) yang nilainya sudah disepakati di awal kontrak.</p>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>Wajib! Semua operator kami memiliki SIO (Surat Izin Operasional) yang aktif dan
-                                berpengalaman menangani berbagai jenis barang industri yang sensitif maupun berat.
-                            </p>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Apakah operator memiliki sertifikat SIO?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Wajib! Semua operator kami memiliki SIO (Surat Izin Operasional) yang aktif dan
+                                    berpengalaman menangani berbagai jenis barang industri yang sensitif maupun berat.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Bagaimana jika unit mengalami kendala/kerusakan?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Bagaimana jika unit mengalami kendala/kerusakan?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Kami menjamin unit dalam kondisi sehat. Namun jika terjadi kendala teknis, tim
+                                    mekanik kami akan segera meluncur ke lokasi atau kami kirimkan unit pengganti agar
+                                    proyek Anda tidak terhenti.</p>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>Kami menjamin unit dalam kondisi sehat. Namun jika terjadi kendala teknis, tim
-                                mekanik kami akan segera meluncur ke lokasi atau kami kirimkan unit pengganti agar
-                                proyek Anda tidak terhenti.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Apa saja metode pembayaran yang diterima?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Kami menerima pembayaran via Transfer Bank atau Cash. Untuk pelanggan korporat dengan
-                                kontrak jangka panjang, kami menyediakan skema termin pembayaran sesuai kesepakatan.
-                            </p>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Apa saja metode pembayaran yang diterima?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Kami menerima pembayaran via Transfer Bank atau Cash. Untuk pelanggan korporat dengan
+                                    kontrak jangka panjang, kami menyediakan skema termin pembayaran sesuai kesepakatan.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Clients Section -->
-        <section id="clients" class="reveal" style="padding-top: 50px; padding-bottom: 50px; background: white;">
-            <!-- <div class="container">
-                <div class="clients-grid">
-                    <img src="https://placehold.co/150x50/F5F6F7/1E272E?text=LOGISTIK+CO" alt="Client Logo" class="client-logo">
-                    <img src="https://placehold.co/150x50/F5F6F7/1E272E?text=CONSTRUCTION+INC" alt="Client Logo" class="client-logo">
-                    <img src="https://placehold.co/150x50/F5F6F7/1E272E?text=FACTORY+GROUP" alt="Client Logo" class="client-logo">
-                    <img src="https://placehold.co/150x50/F5F6F7/1E272E?text=WAREHOUSE+LTD" alt="Client Logo" class="client-logo">
-                    <img src="https://placehold.co/150x50/F5F6F7/1E272E?text=INDUSTRY+CORP" alt="Client Logo" class="client-logo">
-                </div> -->
-            </div>
-        </section>
+        <!-- Spacing Compaction: Commented clients removed -->
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <a href="#" class="footer-logo">SATRIA<span>FORKLIFT</span></a>
+                    <a href="#" class="footer-logo">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="12" x2="20" y2="52" /><line x1="24" y1="12" x2="24" y2="52" stroke-width="2.5" opacity="0.7" /><path d="M4 44h16M4 44v4" /><path d="M20 32h20l12 10v6H20" fill="rgba(192,57,43,0.1)" /><path d="M28 32v-12h16l4 12" /><circle cx="28" cy="50" r="6" fill="currentColor" /><circle cx="48" cy="50" r="5" fill="currentColor" /></svg> SATRIA<span>FORKLIFT</span>
+                    </a>
                     <p class="footer-text">Layanan rental forklift diesel profesional di Bandung. Berpengalaman melayani
                         ratusan proyek dengan unit terawat dan operator bersertifikat SIO.</p>
                 </div>

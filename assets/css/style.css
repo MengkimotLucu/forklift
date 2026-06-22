@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800;900&display=swap');
+
 /* 
    SATRIA FORKLIFT - BLUE & WHITE THEME
    Design Principles: Professional, Trustworthy, Clean, Industrial
@@ -49,7 +51,11 @@ body {
 }
 
 section {
-    padding: 100px 0;
+    padding: 65px 0;
+}
+
+#about {
+    padding: 65px 0 100px;
 }
 
 h1,
@@ -111,18 +117,27 @@ header .container {
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
     font-weight: 900;
     color: var(--primary);
     text-decoration: none;
-    letter-spacing: -0.05em;
-    display: flex;
+    letter-spacing: -0.02em;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    text-transform: uppercase;
 }
 
 .logo span {
-    color: var(--primary);
+    color: var(--accent);
+}
+
+.logo svg, .footer-logo svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--accent);
+    flex-shrink: 0;
 }
 
 nav {
@@ -376,6 +391,12 @@ nav a:hover {
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
     border: 1px solid #F1F5F9;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.unit-detailed-card:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    border-color: rgba(192, 57, 43, 0.3);
 }
 
 .unit-card-visual {
@@ -905,12 +926,20 @@ footer {
 }
 
 .footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 20px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
     color: var(--primary);
+    text-transform: uppercase;
+}
+
+.footer-logo span {
+    color: var(--accent);
 }
 
 .footer-text {
@@ -1082,6 +1111,7 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 250px;
     gap: 15px;
+    grid-auto-flow: dense;
 }
 
 .gallery-item {
@@ -1089,6 +1119,98 @@ footer {
     overflow: hidden;
     border-radius: var(--radius);
     border: 1px solid var(--border);
+}
+
+/* Logo Hover Micro-Interaction */
+.logo svg, .footer-logo svg {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+.logo:hover svg, .footer-logo:hover svg {
+    transform: rotate(-10deg) scale(1.1);
+    filter: drop-shadow(0 4px 10px rgba(192, 57, 43, 0.4));
+}
+
+/* Bento Gallery CTA Tile Widget */
+.gallery-item.cta-tile {
+    background: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid var(--accent);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item.cta-tile::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(192, 57, 43, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+}
+
+.gallery-cta-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-tile-icon {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+    animation: pulse-icon 2s infinite;
+}
+
+.gallery-cta-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.gallery-cta-content p {
+    font-size: 0.85rem;
+    color: var(--border);
+    margin: 0 0 5px;
+}
+
+.btn-tile-wa {
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.25);
+}
+
+.btn-tile-wa:hover {
+    background: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+@keyframes pulse-icon {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .gallery-item.large {
@@ -1396,6 +1518,31 @@ footer {
     margin: 0 auto;
 }
 
+.faq-container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.faq-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-column .faq-item {
+    margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+    .faq-container-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 .faq-item {
     background: var(--bg-alt);
     border-radius: var(--radius);
@@ -1485,7 +1632,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    z-index: 1000;
+    z-index: 1500;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -1530,5 +1677,338 @@ footer {
 
     .client-logo {
         height: 30px;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE COMPACTION OVERRIDES
+   ========================================== */
+@media (max-width: 768px) {
+    /* Global Compact spacings */
+    section {
+        padding: 35px 0 !important;
+    }
+    
+    #about {
+        padding: 35px 0 !important;
+    }
+    
+    .section-title {
+        margin-bottom: 25px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-title h2::after {
+        bottom: -6px;
+        width: 40px;
+        height: 3px;
+    }
+
+    /* Hero section compaction */
+    .hero {
+        padding: 40px 0 20px !important;
+    }
+    
+    .hero-title {
+        font-size: 1.85rem !important;
+        margin-bottom: 15px;
+    }
+    
+    .hero-desc {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-visual {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+    
+    .hero-visual img {
+        max-height: 160px;
+        width: auto;
+    }
+    
+    /* Stats section - row layout to save vertical space */
+    .stats {
+        flex-direction: row !important;
+        gap: 15px;
+        padding: 20px 10px !important;
+        margin-top: 0 !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .stat-item {
+        max-width: 50%;
+        margin: 0;
+    }
+    
+    .stat-item h3 {
+        font-size: 2.2rem !important;
+        margin-bottom: 3px;
+    }
+    
+    .stat-item p {
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+    }
+
+    /* About section image and badge */
+    .about-image {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .about-image img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    .about-badge {
+        position: absolute !important;
+        bottom: 15px !important;
+        left: 15px !important;
+        right: auto !important;
+        margin-top: 0 !important;
+        padding: 10px 18px !important;
+        border: 3px solid white !important;
+        border-radius: var(--radius) !important;
+        z-index: 10 !important;
+        box-shadow: 0 10px 25px rgba(192, 57, 43, 0.3) !important;
+        display: inline-block !important;
+    }
+    
+    .about-badge span {
+        font-size: 1.6rem !important;
+        line-height: 1 !important;
+    }
+    
+    .about-badge p {
+        font-size: 0.7rem !important;
+        margin-top: 2px !important;
+    }
+
+    /* Features section 2x2 grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .feature-card {
+        padding: 20px 10px !important;
+    }
+    
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* Unit card compaction */
+    .unit-card-info {
+        padding: 20px !important;
+    }
+    
+    .unit-card-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .unit-card-subtitle {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .unit-card-specs {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .spec-card {
+        padding: 10px !important;
+    }
+    
+    .spec-card-label {
+        font-size: 0.65rem;
+        margin-bottom: 4px;
+    }
+    
+    .spec-card-value {
+        font-size: 0.85rem;
+    }
+    
+    .btn-card-cta {
+        padding: 12px !important;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    /* Gallery bento grid for mobile (2 columns, shorter rows) */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-rows: 110px !important;
+        gap: 8px !important;
+    }
+    
+    .gallery-item.large,
+    .gallery-item.tall,
+    .gallery-item.wide {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    
+    /* Make two items span to keep layout interesting but compact */
+    .gallery-item:nth-child(1) {
+        grid-column: span 2 !important;
+    }
+    .gallery-item:nth-child(4) {
+        grid-column: span 2 !important;
+    }
+    .gallery-item.cta-tile {
+        grid-column: span 2 !important;
+    }
+    
+    .gallery-caption {
+        bottom: 10px;
+        left: 10px;
+        padding: 4px 8px;
+        font-size: 0.65rem;
+    }
+
+    /* Wilayah Layanan - Mobile Swipe Grid */
+    .area-grid-modern {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 15px !important;
+        padding: 10px 10px 25px !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .area-card {
+        flex: 0 0 85% !important;
+        scroll-snap-align: start !important;
+        margin-bottom: 0 !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    .area-grid-modern::-webkit-scrollbar {
+        height: 5px;
+    }
+    .area-grid-modern::-webkit-scrollbar-track {
+        background: var(--border);
+        border-radius: 10px;
+    }
+    .area-grid-modern::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 10px;
+    }
+
+    /* FAQ accordion padding reduction */
+    .faq-question {
+        padding: 15px 20px !important;
+    }
+    
+    .faq-question h3 {
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer {
+        padding: 0 20px !important;
+    }
+    
+    .faq-answer p {
+        padding-bottom: 15px;
+        font-size: 0.85rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        max-height: 250px;
+    }
+
+    /* Testimonial slider card compaction */
+    .testimonial-card {
+        padding: 20px !important;
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+    
+    .quote-icon {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    /* Footer layouts */
+    footer {
+        padding: 40px 0 20px !important;
+    }
+    
+    .footer-grid {
+        gap: 25px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .footer-title {
+        margin-bottom: 12px;
+    }
+    
+    .footer-map {
+        height: 120px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra tiny screens padding */
+    .hero-title {
+        font-size: 1.65rem !important;
+    }
+    
+    .about-content h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .spec-matrix-table th, .spec-matrix-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        z-index: 1500;
+    }
+    
+    .sticky-wa {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+        z-index: 2000;
     }
 }
