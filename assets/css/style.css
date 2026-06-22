@@ -204,9 +204,52 @@ nav a:hover {
         gap: 40px;
     }
 
-    .hero h1 {
+    .hero h1, .hero-title {
         font-size: 2.5rem;
     }
+}
+
+/* Hero Content Enhancements */
+.hero-subtitle {
+    display: inline-block;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.diesel-badge {
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(192, 57, 43, 0.08);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
 }
 
 /* Stats Section */

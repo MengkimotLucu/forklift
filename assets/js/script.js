@@ -36,37 +36,44 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const totalCards = cards.length;
     
-    // Generate Dots Dynamically
-    // Tentukan jumlah dots berdasarkan jumlah kartu (misal per grup 3 kartu di desktop)
-    cards.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            goToSlide(i);
-            resetAutoSlide();
-        });
-        dotContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.dot');
+    // Generate Dots Dynamically based on responsive view
+    function setupDots() {
+        if (!dotContainer) return;
+        dotContainer.innerHTML = '';
+        const maxIndex = totalCards - (window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1);
+        for (let i = 0; i <= maxIndex; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+                resetAutoSlide();
+            });
+            dotContainer.appendChild(dot);
+        }
+    }
 
     function goToSlide(index) {
-        currentIndex = index;
-        const cardWidth = cards[0].offsetWidth + 30; // 30 is gap
-        
-        // Batasi agar tidak bergeser ke ruang kosong
         const maxIndex = totalCards - (window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1);
+        currentIndex = index;
+        
         if (currentIndex > maxIndex) currentIndex = 0;
         if (currentIndex < 0) currentIndex = maxIndex;
 
+        const cardWidth = cards[0].offsetWidth + 30; // 30 is gap
         wrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 
-        // Update dots
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
+        // Update dots active class
+        if (dotContainer) {
+            const dots = dotContainer.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
     }
+
+    // Initialize dots on load
+    setupDots();
 
     // Auto Slide Logic
     let slideInterval = setInterval(() => {
@@ -86,19 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
     wrapper.addEventListener('mouseleave', resetAutoSlide);
 
-    // Smooth scroll for anchors
+    // Smooth scroll for anchors & update URL hash
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
+                // Update URL hash without page jump after scroll completes to help Google index Sitelinks
+                setTimeout(() => {
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        window.location.hash = targetId;
+                    }
+                }, 800);
             }
         });
     });
 
-    // Handle Window Resize (re-calculate positions)
+    // Handle Window Resize (re-calculate positions and recreate dots)
     window.addEventListener('resize', () => {
+        setupDots();
         goToSlide(currentIndex);
     });
 
