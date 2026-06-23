@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clean URL Routing System
     const isLocalFile = window.location.protocol === 'file:';
+    const isLocalServer = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.startsWith('192.168.');
+    const isDev = isLocalFile || isLocalServer;
     
     // Route mappings
     const routes = {
@@ -151,30 +153,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cleanPath = href.split('#')[0];
         
-        if (isLocalFile) {
-            // Local file navigation helper
+        if (isDev) {
+            // Local development navigation helper (prevent 404 on Live Server / file protocol)
             if (href.startsWith('/')) {
                 e.preventDefault();
                 const inEnFolder = window.location.pathname.replace(/\\/g, '/').includes('/en/');
                 const hash = href.includes('#') ? '#' + href.split('#')[1] : '';
                 
+                const isHomepage = window.location.pathname === '/' || 
+                                   window.location.pathname.endsWith('/index.html') || 
+                                   window.location.pathname.endsWith('/en/') || 
+                                   window.location.pathname.endsWith('/en/index.html');
+                                   
+                const hamburger = document.getElementById('hamburger-btn');
+                const nav = document.getElementById('nav-menu');
+                if (hamburger && nav) {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+
                 if (cleanPath === '/' || cleanPath === '/beranda') {
-                    window.location.href = (inEnFolder ? '../index.html' : 'index.html') + hash;
+                    if (isHomepage) {
+                        scrollToSection('#home', true);
+                    } else {
+                        window.location.href = (inEnFolder ? '../index.html' : 'index.html') + hash;
+                    }
                 } else if (cleanPath === '/en' || cleanPath === '/en/' || cleanPath === '/en/home') {
-                    window.location.href = (inEnFolder ? 'index.html' : 'en/index.html') + hash;
+                    if (isHomepage) {
+                        scrollToSection('#home', true);
+                    } else {
+                        window.location.href = (inEnFolder ? 'index.html' : 'en/index.html') + hash;
+                    }
                 } else if (routes[cleanPath] !== undefined) {
                     const sectionHash = routes[cleanPath];
-                    if (inEnFolder) {
-                        if (cleanPath.startsWith('/en/')) {
-                            window.location.href = 'index.html' + sectionHash;
-                        } else {
-                            window.location.href = '../index.html' + sectionHash;
-                        }
+                    if (isHomepage) {
+                        scrollToSection(sectionHash, true);
                     } else {
-                        if (cleanPath.startsWith('/en/')) {
-                            window.location.href = 'en/index.html' + sectionHash;
+                        if (inEnFolder) {
+                            if (cleanPath.startsWith('/en/')) {
+                                window.location.href = 'index.html' + sectionHash;
+                            } else {
+                                window.location.href = '../index.html' + sectionHash;
+                            }
                         } else {
-                            window.location.href = 'index.html' + sectionHash;
+                            if (cleanPath.startsWith('/en/')) {
+                                window.location.href = 'en/index.html' + sectionHash;
+                            } else {
+                                window.location.href = 'index.html' + sectionHash;
+                            }
                         }
                     }
                 } else {
@@ -202,9 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Production routing
-        const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html' || 
-                             window.location.pathname === '/en' || window.location.pathname === '/en/' || 
-                             window.location.pathname === '/en/index.html';
+        const normalizedPath = window.location.pathname.endsWith('/') && window.location.pathname.length > 1 ? window.location.pathname.slice(0, -1) : window.location.pathname;
+        const isHomepage = normalizedPath === '/' || normalizedPath === '/index.html' || 
+                             normalizedPath === '/en' || normalizedPath === '/en/index.html' || 
+                             routes[normalizedPath] !== undefined;
 
         if (isHomepage && (routes[cleanPath] !== undefined || cleanPath === '/' || cleanPath === '/en' || cleanPath === '/en/')) {
             e.preventDefault();
@@ -231,13 +258,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle back/forward navigation
     window.addEventListener('popstate', () => {
-        if (!isLocalFile) {
+        if (!isDev) {
             handleRoute(window.location.pathname, true);
         }
     });
 
     // On page load, scroll to section based on pathname
-    if (!isLocalFile) {
+    if (!isDev) {
         setTimeout(() => {
             handleRoute(window.location.pathname, false);
         }, 150);
