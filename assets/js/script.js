@@ -263,12 +263,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // On page load, scroll to section based on pathname
-    if (!isDev) {
-        setTimeout(() => {
+    // On page load, scroll to section based on data-scroll-target or pathname
+    setTimeout(() => {
+        const bodyTarget = document.body.getAttribute('data-scroll-target');
+        if (bodyTarget) {
+            scrollToSection(bodyTarget, false);
+        } else if (!isDev) {
             handleRoute(window.location.pathname, false);
-        }, 150);
-    }
+        }
+    }, 150);
 
     // Handle Window Resize (re-calculate positions and recreate dots)
     window.addEventListener('resize', () => {
