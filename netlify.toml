@@ -1,63 +1,63 @@
 # SPA Navigation rewrites for English section
 [[redirects]]
   from = "/en/home"
-  to = "/en/index.html"
+  to = "/en/home.html"
   status = 200
 
 [[redirects]]
   from = "/en/fleet"
-  to = "/en/index.html"
+  to = "/en/fleet.html"
   status = 200
 
 [[redirects]]
   from = "/en/gallery"
-  to = "/en/index.html"
+  to = "/en/gallery.html"
   status = 200
 
 [[redirects]]
   from = "/en/areas"
-  to = "/en/index.html"
+  to = "/en/areas.html"
   status = 200
 
 [[redirects]]
   from = "/en/testimonials"
-  to = "/en/index.html"
+  to = "/en/testimonials.html"
   status = 200
 
 [[redirects]]
   from = "/en/faq"
-  to = "/en/index.html"
+  to = "/en/faq.html"
   status = 200
 
 # SPA Navigation rewrites for Indonesian section
 [[redirects]]
   from = "/beranda"
-  to = "/index.html"
+  to = "/beranda.html"
   status = 200
 
 [[redirects]]
   from = "/armada"
-  to = "/index.html"
+  to = "/armada.html"
   status = 200
 
 [[redirects]]
   from = "/galeri"
-  to = "/index.html"
+  to = "/galeri.html"
   status = 200
 
 [[redirects]]
   from = "/wilayah"
-  to = "/index.html"
+  to = "/wilayah.html"
   status = 200
 
 [[redirects]]
   from = "/layanan"
-  to = "/index.html"
+  to = "/layanan.html"
   status = 200
 
 [[redirects]]
   from = "/faq"
-  to = "/index.html"
+  to = "/faq.html"
   status = 200
 
 # Clean URLs for capacity subpages (Indonesian)

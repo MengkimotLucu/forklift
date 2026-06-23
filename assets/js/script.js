@@ -157,13 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Local development navigation helper (prevent 404 on Live Server / file protocol)
             if (href.startsWith('/')) {
                 e.preventDefault();
-                const inEnFolder = window.location.pathname.replace(/\\/g, '/').includes('/en/');
+                const normalizedPathname = window.location.pathname.replace(/\\/g, '/');
+                const inEnFolder = normalizedPathname.includes('/en/') || normalizedPathname.endsWith('/en') || normalizedPathname.includes('/en/index.html');
                 const hash = href.includes('#') ? '#' + href.split('#')[1] : '';
                 
-                const isHomepage = window.location.pathname === '/' || 
-                                   window.location.pathname.endsWith('/index.html') || 
-                                   window.location.pathname.endsWith('/en/') || 
-                                   window.location.pathname.endsWith('/en/index.html');
+                const isHomepage = normalizedPathname === '/' || 
+                                   normalizedPathname.endsWith('/index.html') || 
+                                   normalizedPathname.endsWith('/en/') || 
+                                   normalizedPathname.endsWith('/en/index.html');
                                    
                 const hamburger = document.getElementById('hamburger-btn');
                 const nav = document.getElementById('nav-menu');
@@ -172,21 +173,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     nav.classList.remove('active');
                 }
 
+                // Determine if target path is in English
+                const routeIsEn = cleanPath.startsWith('/en/') || cleanPath === '/en' || cleanPath === '/en/';
+                const sameLanguage = (inEnFolder && routeIsEn) || (!inEnFolder && !routeIsEn);
+
                 if (cleanPath === '/' || cleanPath === '/beranda') {
-                    if (isHomepage) {
+                    if (isHomepage && sameLanguage) {
                         scrollToSection('#home', true);
                     } else {
                         window.location.href = (inEnFolder ? '../index.html' : 'index.html') + hash;
                     }
                 } else if (cleanPath === '/en' || cleanPath === '/en/' || cleanPath === '/en/home') {
-                    if (isHomepage) {
+                    if (isHomepage && sameLanguage) {
                         scrollToSection('#home', true);
                     } else {
                         window.location.href = (inEnFolder ? 'index.html' : 'en/index.html') + hash;
                     }
                 } else if (routes[cleanPath] !== undefined) {
                     const sectionHash = routes[cleanPath];
-                    if (isHomepage) {
+                    if (isHomepage && sameLanguage) {
                         scrollToSection(sectionHash, true);
                     } else {
                         if (inEnFolder) {
@@ -233,7 +238,12 @@ document.addEventListener('DOMContentLoaded', () => {
                              normalizedPath === '/en' || normalizedPath === '/en/index.html' || 
                              routes[normalizedPath] !== undefined;
 
-        if (isHomepage && (routes[cleanPath] !== undefined || cleanPath === '/' || cleanPath === '/en' || cleanPath === '/en/')) {
+        // Language-aware checks for production
+        const currentIsEn = window.location.pathname.replace(/\\/g, '/').startsWith('/en');
+        const routeIsEn = cleanPath.startsWith('/en/') || cleanPath === '/en' || cleanPath === '/en/';
+        const sameLanguage = (currentIsEn && routeIsEn) || (!currentIsEn && !routeIsEn);
+
+        if (isHomepage && sameLanguage && (routes[cleanPath] !== undefined || cleanPath === '/' || cleanPath === '/en' || cleanPath === '/en/')) {
             e.preventDefault();
 
             const hamburger = document.getElementById('hamburger-btn');

@@ -3,10 +3,10 @@
   RewriteBase /
 
   # Rewrite EN SPA routes
-  RewriteRule ^en/(home|fleet|gallery|areas|testimonials|faq)/?$ en/index.html [L,NC]
+  RewriteRule ^en/(home|fleet|gallery|areas|testimonials|faq)/?$ en/$1.html [L,NC]
 
   # Rewrite ID SPA routes
-  RewriteRule ^(beranda|armada|galeri|wilayah|layanan|faq)/?$ index.html [L,NC]
+  RewriteRule ^(beranda|armada|galeri|wilayah|layanan|faq)/?$ $1.html [L,NC]
 
   # Serve HTML files without extension (Clean URLs)
   RewriteCond %{REQUEST_FILENAME} !-d

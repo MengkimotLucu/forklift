@@ -119,8 +119,8 @@ const subpagesEn = [
         activeTab: 'all'
     },
     {
-        filename: 'en/sewa-forklift-rancaekek.html',
-        canonical: 'https://satriaforklift.com/en/sewa-forklift-rancaekek',
+        filename: 'en/rent-forklift-rancaekek.html',
+        canonical: 'https://satriaforklift.com/en/rent-forklift-rancaekek',
         title: 'Forklift Rental Rancaekek & Cileunyi | Satria Forklift',
         description: 'Fast diesel forklift rental services 3-7 tons for Rancaekek Industrial Area, Jatinangor, Cileunyi, East Bandung. 24/7 support.',
         h1: 'Diesel Forklift Rental in Rancaekek & Cileunyi',
@@ -129,8 +129,8 @@ const subpagesEn = [
         activeTab: 'all'
     },
     {
-        filename: 'en/sewa-forklift-gedebage.html',
-        canonical: 'https://satriaforklift.com/en/sewa-forklift-gedebage',
+        filename: 'en/rent-forklift-gedebage.html',
+        canonical: 'https://satriaforklift.com/en/rent-forklift-gedebage',
         title: 'Forklift Rental Gedebage & East Bandung | Satria Forklift',
         description: 'Rent 3-7 ton diesel forklifts in Gedebage warehousing, Soekarno-Hatta, and East Bandung. Fast response, transparent rates, skilled operators.',
         h1: 'Diesel Forklift Rental in Gedebage & East Bandung',
