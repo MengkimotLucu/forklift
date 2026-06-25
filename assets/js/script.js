@@ -1,5 +1,5 @@
 /*
-   SATRIA FORKLIFT - DYNAMIC SLIDER & MOBILE MENU LOGIC
+   SATRIA MANDIRI FORKLIFT - DYNAMIC SLIDER & MOBILE MENU LOGIC
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -332,7 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // If it's a stat item container, trigger count up for numbers inside
                 const numbers = entry.target.querySelectorAll('[data-target]');
                 numbers.forEach(num => {
-                    if (!num.classList.contains('counted')) {
+                    const targetVal = num.getAttribute('data-target');
+                    if (/^\d+$/.test(targetVal) && !num.classList.contains('counted')) {
                         num.classList.add('counted');
                         animateValue(num);
                     }
@@ -368,23 +369,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Unit Tab Logic
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.unit-tab-content');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const target = btn.getAttribute('data-target');
-
-            // Remove active class from all buttons and contents
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-
-            // Add active class to current button and target content
-            btn.classList.add('active');
-            document.getElementById(target).classList.add('active');
+    // Unit & Crane Tab Logic (Scoped to their parent section)
+    const initTabs = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        const btns = section.querySelectorAll('.tab-btn');
+        const contents = section.querySelectorAll('.unit-tab-content');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-target');
+                btns.forEach(b => b.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                const targetEl = section.querySelector(`#${target}`) || document.getElementById(target);
+                if (targetEl) targetEl.classList.add('active');
+            });
         });
-    });
+    };
+    initTabs('unit');
+    initTabs('crane');
 
     // Language Dropdown Click Toggle (mainly for mobile/touch screens)
     const langBtn = document.querySelector('.lang-dropdown-btn');

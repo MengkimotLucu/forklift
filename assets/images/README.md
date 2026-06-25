@@ -1,4 +1,4 @@
-# Folder Gambar Satria Forklift
+# Folder Gambar Satria Mandiri Forklift
 
 ## Struktur Folder yang Dibutuhkan:
 

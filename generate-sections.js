@@ -19,43 +19,43 @@ const sectionsId = [
         filename: 'beranda.html',
         target: '#home',
         canonical: 'https://satriaforklift.com/beranda',
-        title: 'Rental Forklift Bandung & Cimahi 3-7 Ton | Satria Forklift',
-        description: 'Sewa forklift diesel 3-7 ton murah di Bandung & Cimahi. Respon cepat, unit terawat, dan operator bersertifikat SIO aktif.'
+        title: 'Satria Mandiri Forklift: Rental Forklift & Crane Bandung Raya',
+        description: 'Jasa sewa forklift diesel 3-15 Ton & Mobile Crane profesional di Bandung, Cimahi & sekitarnya. Unit prima, harga kompetitif, dengan operator berpengalaman.'
     },
     {
         filename: 'armada.html',
         target: '#unit',
         canonical: 'https://satriaforklift.com/armada',
-        title: 'Armada & Kapasitas Unit Rental Forklift Bandung | Satria Forklift',
-        description: 'Pilihan kapasitas unit forklift diesel terlengkap di Bandung Raya: 3 Ton, 5 Ton, dan 7 Ton. Unit sehat prima siap kerja berat.'
+        title: 'Armada & Kapasitas Rental Forklift & Crane Bandung | Satria Mandiri Forklift',
+        description: 'Pilihan kapasitas unit rental forklift diesel 3-15 Ton & Mobile Crane 20-45 Ton terlengkap di Bandung Raya. Unit sehat prima siap kerja berat.'
     },
     {
         filename: 'galeri.html',
         target: '#galeri',
         canonical: 'https://satriaforklift.com/galeri',
-        title: 'Galeri Proyek Bongkar Muat & Sewa Forklift | Satria Forklift',
-        description: 'Dokumentasi asli kegiatan operasional rental forklift diesel Satria Forklift saat menangani berbagai proyek industri di Bandung.'
+        title: 'Galeri Proyek Sewa Forklift & Crane | Satria Mandiri Forklift',
+        description: 'Dokumentasi asli kegiatan operasional rental forklift & mobile crane Satria Mandiri Forklift saat menangani berbagai proyek industri di Bandung.'
     },
     {
         filename: 'wilayah.html',
         target: '#wilayah',
         canonical: 'https://satriaforklift.com/wilayah',
-        title: 'Wilayah Layanan Sewa Forklift Bandung Raya | Satria Forklift',
-        description: 'Layanan sewa forklift diesel cepat untuk Cimareme, Batujajar, Padalarang, Kopo, Gedebage, Rancaekek, dan area Bandung Raya lainnya.'
+        title: 'Wilayah Layanan Sewa Forklift & Crane Bandung | Satria Mandiri Forklift',
+        description: 'Layanan sewa forklift & crane cepat untuk Cimareme, Batujajar, Padalarang, Kopo, Gedebage, Rancaekek, dan area Bandung Raya lainnya.'
     },
     {
         filename: 'layanan.html',
         target: '#layanan',
         canonical: 'https://satriaforklift.com/layanan',
-        title: 'Testimoni Pelanggan Satria Forklift Bandung | Satria Forklift',
-        description: 'Ulasan asli dari para pelanggan korporat dan industri kami di wilayah Bandung Selatan, Timur, Barat, dan Cimahi.'
+        title: 'Testimoni Pelanggan Satria Mandiri Forklift & Crane | Satria Mandiri Forklift',
+        description: 'Ulasan asli dari para pelanggan korporat dan industri sewa forklift & crane kami di wilayah Bandung Selatan, Timur, Barat, dan Cimahi.'
     },
     {
         filename: 'faq.html',
         target: '#faq',
         canonical: 'https://satriaforklift.com/faq',
-        title: 'Tanya Jawab (FAQ) Sewa Forklift Bandung | Satria Forklift',
-        description: 'Temukan jawaban lengkap seputar cara pemesanan, kapasitas unit, durasi sewa (shift/harian), biaya mob-demob, dan operator SIO.'
+        title: 'Tanya Jawab (FAQ) Sewa Forklift & Crane Bandung | Satria Mandiri Forklift',
+        description: 'Temukan jawaban lengkap seputar cara pemesanan forklift & crane, kapasitas unit, durasi sewa (shift/harian), biaya mob-demob, dan operator SIO.'
     }
 ];
 
@@ -65,43 +65,43 @@ const sectionsEn = [
         filename: 'en/home.html',
         target: '#home',
         canonical: 'https://satriaforklift.com/en/home',
-        title: 'Diesel Forklift Rental Bandung & Cimahi 3-7 Ton | Satria Forklift',
-        description: 'Affordable diesel forklift rentals serving Bandung City, Cimahi, and all outskirts. Fast response, well-maintained fleet, and SIO-certified operators.'
+        title: 'Diesel Forklift & Crane Rental Bandung & Cimahi | Satria Mandiri Forklift',
+        description: 'Professional forklift rental 3-15 Ton & Mobile Cranes in Bandung, Cimahi & outskirts. Prime fleet, competitive rates, and SIO certified operators.'
     },
     {
         filename: 'en/fleet.html',
         target: '#unit',
         canonical: 'https://satriaforklift.com/en/fleet',
-        title: 'Our Forklift Fleet & Capacities Bandung | Satria Forklift',
-        description: 'Choose from our range of compact to heavy duty diesel forklifts in Bandung: 3 Ton, 5 Ton, and 7 Ton. All units ready for operation.'
+        title: 'Forklift & Crane Fleet & Capacities Bandung | Satria Mandiri Forklift',
+        description: 'Choose from our range of 3-15 Ton diesel forklifts and 20-45 Ton mobile cranes in Bandung. All units ready for operation.'
     },
     {
         filename: 'en/gallery.html',
         target: '#galeri',
         canonical: 'https://satriaforklift.com/en/gallery',
-        title: 'Project Gallery & Forklift Operations | Satria Forklift',
-        description: 'View authentic photo documentation of our diesel forklift rental fleet working in various factories and warehouses across Bandung.'
+        title: 'Project Gallery & Forklift/Crane Operations | Satria Mandiri Forklift',
+        description: 'View authentic photo documentation of our forklift & crane rental fleet working in various factories and warehouses across Bandung.'
     },
     {
         filename: 'en/areas.html',
         target: '#wilayah',
         canonical: 'https://satriaforklift.com/en/areas',
-        title: 'Forklift Rental Coverage Areas Bandung | Satria Forklift',
-        description: 'Providing fast response forklift hires for Cimareme Industrial Area, Batujajar, Padalarang, Kopo, Gedebage, Rancaekek, and Bandung outskirts.'
+        title: 'Forklift & Crane Rental Coverage Areas Bandung | Satria Mandiri Forklift',
+        description: 'Providing fast response forklift and mobile crane hires for Cimareme Industrial Area, Batujajar, Padalarang, Kopo, Gedebage, Rancaekek, and Bandung outskirts.'
     },
     {
         filename: 'en/testimonials.html',
         target: '#layanan',
         canonical: 'https://satriaforklift.com/en/testimonials',
-        title: 'Client Reviews & Testimonials | Satria Forklift Bandung',
-        description: 'Read real reviews and feedback from our corporate partners and warehouse managers in Bandung and Cimahi areas.'
+        title: 'Client Reviews & Testimonials | Satria Mandiri Forklift & Crane',
+        description: 'Read real reviews and feedback from our forklift & crane rental partners and warehouse managers in Bandung and Cimahi areas.'
     },
     {
         filename: 'en/faq.html',
         target: '#faq',
         canonical: 'https://satriaforklift.com/en/faq',
-        title: 'Frequently Asked Questions (FAQ) | Satria Forklift Bandung',
-        description: 'Find answers about forklift booking processes, shift durations, mobilizations, payment terms, and SIO certified operators.'
+        title: 'Frequently Asked Questions (FAQ) | Satria Mandiri Forklift & Crane',
+        description: 'Find answers about forklift & crane booking processes, shift durations, mobilizations, payment terms, and SIO certified operators.'
     }
 ];
 
