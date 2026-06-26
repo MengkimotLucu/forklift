@@ -123,3 +123,56 @@
   from = "/en/rent-forklift-gedebage"
   to = "/en/rent-forklift-gedebage.html"
   status = 200
+
+# Clean URLs for Crane subpages (Indonesian)
+[[redirects]]
+  from = "/sewa-crane-20-ton-bandung"
+  to = "/sewa-crane-20-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-crane-25-ton-bandung"
+  to = "/sewa-crane-25-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-crane-35-ton-bandung"
+  to = "/sewa-crane-35-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/sewa-crane-45-ton-bandung"
+  to = "/sewa-crane-45-ton-bandung.html"
+  status = 200
+
+# Clean URLs for Crane subpages (English)
+[[redirects]]
+  from = "/en/rent-crane-20-ton-bandung"
+  to = "/en/rent-crane-20-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-crane-25-ton-bandung"
+  to = "/en/rent-crane-25-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-crane-35-ton-bandung"
+  to = "/en/rent-crane-35-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-crane-45-ton-bandung"
+  to = "/en/rent-crane-45-ton-bandung.html"
+  status = 200
+
+# Clean URLs for Forklift 15 Ton subpages
+[[redirects]]
+  from = "/sewa-forklift-15-ton-bandung"
+  to = "/sewa-forklift-15-ton-bandung.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/rent-forklift-15-ton-bandung"
+  to = "/en/rent-forklift-15-ton-bandung.html"
+  status = 200

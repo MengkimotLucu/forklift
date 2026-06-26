@@ -84,6 +84,46 @@ const subpagesId = [
         subtitle: 'SPESIALIS RENTAL FORKLIFT & CRANE GUDANG GEDEBAGE & BYPASS',
         desc: 'Sewa forklift 3-15 Ton & Mobile Crane di area pergudangan Gedebage, Soekarno-Hatta, dan Bandung Timur. Respon cepat, harga transparan, operator berpengalaman.',
         activeTab: 'all'
+    },
+    {
+        filename: 'sewa-crane-20-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/sewa-crane-20-ton-bandung',
+        title: 'Sewa Crane 20 Ton Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Jasa sewa mobile crane 20 Ton murah di Bandung & Cimahi. Unit prima siap kerja, operator bersertifikat SIO aktif, respon cepat 24 jam.',
+        h1: 'Jasa Sewa Mobile Crane 20 Ton di Bandung & Cimahi',
+        subtitle: 'UNIT MOBILE, SANGAT COCOK UNTUK PROYEK & INSTALASI MESIN SEDANG',
+        desc: 'Butuh rental mobile crane 20 ton yang gesit dan tangguh untuk proyek konstruksi atau pemindahan mesin sedang? Kami menyediakan unit crane 20 ton prima dengan operator berpengalaman.',
+        activeTab: 'crane-20t'
+    },
+    {
+        filename: 'sewa-crane-25-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/sewa-crane-25-ton-bandung',
+        title: 'Sewa Crane 25 Ton Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Jasa sewa mobile crane 25 Ton murah di Bandung & Cimahi. Unit prima terawat, operator bersertifikat SIO aktif, siap melayani 24 jam.',
+        h1: 'Jasa Sewa Mobile Crane 25 Ton di Bandung & Cimahi',
+        subtitle: 'KAPASITAS MEDIUM, UTAMA UNTUK ERECTION BAJA & JEMBATAN',
+        desc: 'Penyedia rental truck crane/mobile crane 25 ton prima untuk pemasangan baja, konstruksi jembatan, dan bongkar muat kontainer di Bandung Raya.',
+        activeTab: 'crane-25t'
+    },
+    {
+        filename: 'sewa-crane-35-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/sewa-crane-35-ton-bandung',
+        title: 'Sewa Crane 35 Ton Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Jasa sewa rough terrain crane 35 Ton di Bandung & Cimahi. Unit tangguh off-road, operator ber-SIO aktif, respon cepat.',
+        h1: 'Jasa Sewa Rough Terrain Crane 35 Ton di Bandung & Cimahi',
+        subtitle: 'UNIT ROUGH TERRAIN, TANGGUH DI MEDAN BERLUMPUR & OFF-ROAD',
+        desc: 'Butuh sewa rough terrain crane 35 ton untuk medan kasar atau area berlumpur? Satria Mandiri Forklift menyediakan crane 35 Ton prima dengan ban off-road besar.',
+        activeTab: 'crane-35t'
+    },
+    {
+        filename: 'sewa-crane-45-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/sewa-crane-45-ton-bandung',
+        title: 'Sewa Crane 45 Ton Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Jasa sewa mobile crane 45 Ton heavy duty di Bandung & Cimahi. Unit prima + operator ber-SIO aktif. Hubungi kami untuk penawaran terbaik.',
+        h1: 'Jasa Sewa Mobile Crane 45 Ton di Bandung & Cimahi',
+        subtitle: 'UNIT HEAVY DUTY UNTUK KONSTRUKSI BESAR & MESIN RAKSASA',
+        desc: 'Layanan sewa truck crane 45 ton heavy duty dengan stabilizer kokoh dan boom panjang hingga 42 meter untuk proyek konstruksi skala besar di Bandung.',
+        activeTab: 'crane-45t'
     }
 ];
 
@@ -157,6 +197,46 @@ const subpagesEn = [
         subtitle: 'WAREHOUSE FORKLIFT & CRANE SPECIALIST IN GEDEBAGE & BYPASS',
         desc: 'Rent 3-15 ton forklifts & mobile cranes in the warehousing hub of Gedebage, Soekarno-Hatta, and East Bandung. Quick delivery, transparent pricing, and experienced crew.',
         activeTab: 'all'
+    },
+    {
+        filename: 'en/rent-crane-20-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/en/rent-crane-20-ton-bandung',
+        title: 'Rent 20 Ton Crane Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Rent compact 20-ton mobile crane in Bandung & Cimahi. Well-maintained units, competitive rates, and SIO certified crew.',
+        h1: 'Mobile Crane Rental 20 Ton in Bandung & Cimahi',
+        subtitle: 'COMPACT MOBILE CRANE, BEST SUITED FOR MEDIUM PROJECTS & MACHINERY',
+        desc: 'Need a mobile and efficient 20-ton crane for construction projects or machinery installation? Satria Mandiri Forklift provides prime 20T crane units with professional operators.',
+        activeTab: 'crane-20t'
+    },
+    {
+        filename: 'en/rent-crane-25-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/en/rent-crane-25-ton-bandung',
+        title: 'Rent 25 Ton Crane Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Rent 25-ton mobile crane in Bandung & Cimahi. Safe operations, steel erection, and experienced operators.',
+        h1: 'Mobile Crane Rental 25 Ton in Bandung & Cimahi',
+        subtitle: 'MEDIUM CAPACITY, IDEAL FOR STEEL ERECTION & BRIDGE CONSTRUCTION',
+        desc: 'Rent a 25-ton truck crane/mobile crane for steel installation, bridge work, and container handling in Bandung. Contact us for rates today.',
+        activeTab: 'crane-25t'
+    },
+    {
+        filename: 'en/rent-crane-35-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/en/rent-crane-35-ton-bandung',
+        title: 'Rent 35 Ton Crane Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Rent rough terrain 35-ton crane in Bandung & Cimahi. Perfect for muddy off-road sites. SIO licensed crew.',
+        h1: 'Rough Terrain Crane Rental 35 Ton in Bandung & Cimahi',
+        subtitle: 'ROUGH TERRAIN CRANE, CAPABLE OF MEDLEY MEDIAN & OFF-ROAD SITES',
+        desc: 'Need a durable 35-ton crane for rough terrains or off-road infrastructure? Satria Mandiri Forklift provides well-maintained rough terrain cranes with experienced operators.',
+        activeTab: 'crane-35t'
+    },
+    {
+        filename: 'en/rent-crane-45-ton-bandung.html',
+        canonical: 'https://satriaforklift.com/en/rent-crane-45-ton-bandung',
+        title: 'Rent 45 Ton Crane Bandung & Cimahi | Satria Mandiri Forklift & Crane',
+        description: 'Rent heavy duty 45 ton mobile crane in Bandung & Cimahi. Great reach, powerful stabilizers, SIO licensed crew.',
+        h1: 'Mobile Crane Rental 45 Ton in Bandung & Cimahi',
+        subtitle: 'HEAVY-DUTY MOBILE CRANE FOR LARGE SCALE CONSTRUCTION',
+        desc: 'Specialized 45-ton truck crane rental with boom length up to 42 meters and robust stabilizers for heavy machinery moving and massive infrastructure.',
+        activeTab: 'crane-45t'
     }
 ];
 
@@ -194,6 +274,33 @@ function generateHTML(template, spec, isEn) {
         html = html.replace(/class="tab-btn"\s+data-target="unit-15t"/, 'class="tab-btn active" data-target="unit-15t"');
         html = html.replace(/class="unit-tab-content active"\s+id="unit-3t"/, 'class="unit-tab-content" id="unit-3t"');
         html = html.replace(/class="unit-tab-content"\s+id="unit-15t"/, 'class="unit-tab-content active" id="unit-15t"');
+    } else if (spec.activeTab === 'crane-25t') {
+        html = html.replace(/class="tab-btn active"\s+data-target="crane-20t"/, 'class="tab-btn" data-target="crane-20t"');
+        html = html.replace(/class="tab-btn"\s+data-target="crane-25t"/, 'class="tab-btn active" data-target="crane-25t"');
+        html = html.replace(/class="unit-tab-content active"\s+id="crane-20t"/, 'class="unit-tab-content" id="crane-20t"');
+        html = html.replace(/class="unit-tab-content"\s+id="crane-25t"/, 'class="unit-tab-content active" id="crane-25t"');
+    } else if (spec.activeTab === 'crane-35t') {
+        html = html.replace(/class="tab-btn active"\s+data-target="crane-20t"/, 'class="tab-btn" data-target="crane-20t"');
+        html = html.replace(/class="tab-btn"\s+data-target="crane-35t"/, 'class="tab-btn active" data-target="crane-35t"');
+        html = html.replace(/class="unit-tab-content active"\s+id="crane-20t"/, 'class="unit-tab-content" id="crane-20t"');
+        html = html.replace(/class="unit-tab-content"\s+id="crane-35t"/, 'class="unit-tab-content active" id="crane-35t"');
+    } else if (spec.activeTab === 'crane-45t') {
+        html = html.replace(/class="tab-btn active"\s+data-target="crane-20t"/, 'class="tab-btn" data-target="crane-20t"');
+        html = html.replace(/class="tab-btn"\s+data-target="crane-45t"/, 'class="tab-btn active" data-target="crane-45t"');
+        html = html.replace(/class="unit-tab-content active"\s+id="crane-20t"/, 'class="unit-tab-content" id="crane-20t"');
+        html = html.replace(/class="unit-tab-content"\s+id="crane-45t"/, 'class="unit-tab-content active" id="crane-45t"');
+    }
+
+    // 6. Set scroll target based on page type / activeTab
+    if (spec.activeTab) {
+        if (spec.activeTab.startsWith('crane-')) {
+            html = html.replace(/<body id="home">/, '<body id="home" data-scroll-target="#crane">');
+        } else if (spec.activeTab === 'all') {
+            html = html.replace(/<body id="home">/, '<body id="home" data-scroll-target="#wilayah">');
+        } else {
+            // For forklift capacity tabs ('3t', '5t', '7t', '15t')
+            html = html.replace(/<body id="home">/, '<body id="home" data-scroll-target="#unit">');
+        }
     }
 
     return html;

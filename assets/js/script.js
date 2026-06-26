@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.testimonial-card');
     
     let currentIndex = 0;
-    const totalCards = cards.length;
+    const totalCards = cards ? cards.length : 0;
     
     // Generate Dots Dynamically based on responsive view
     function setupDots() {
-        if (!dotContainer) return;
+        if (!dotContainer || totalCards === 0) return;
         dotContainer.innerHTML = '';
         const maxIndex = totalCards - (window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1);
         for (let i = 0; i <= maxIndex; i++) {
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function goToSlide(index) {
+        if (!wrapper || !cards || cards.length === 0) return;
         const maxIndex = totalCards - (window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1);
         currentIndex = index;
         
@@ -76,12 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
     setupDots();
 
     // Auto Slide Logic
-    let slideInterval = setInterval(() => {
-        currentIndex++;
-        goToSlide(currentIndex);
-    }, 4000);
+    let slideInterval;
+    if (wrapper && totalCards > 0) {
+        slideInterval = setInterval(() => {
+            currentIndex++;
+            goToSlide(currentIndex);
+        }, 4000);
+    }
 
     function resetAutoSlide() {
+        if (!wrapper || totalCards === 0) return;
         clearInterval(slideInterval);
         slideInterval = setInterval(() => {
             currentIndex++;
@@ -90,13 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Pause on hover
-    wrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    wrapper.addEventListener('mouseleave', resetAutoSlide);
+    if (wrapper) {
+        wrapper.addEventListener('mouseenter', () => {
+            if (slideInterval) clearInterval(slideInterval);
+        });
+        wrapper.addEventListener('mouseleave', resetAutoSlide);
+    }
 
     // Clean URL Routing System
-    const isLocalFile = window.location.protocol === 'file:';
-    const isLocalServer = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.startsWith('192.168.');
-    const isDev = isLocalFile || isLocalServer;
+    const isProd = window.location.hostname === 'satriaforklift.com' || window.location.hostname === 'www.satriaforklift.com';
+    const isDev = !isProd;
     
     // Route mappings
     const routes = {
@@ -113,7 +121,33 @@ document.addEventListener('DOMContentLoaded', () => {
         '/en/gallery': '#galeri',
         '/en/areas': '#wilayah',
         '/en/testimonials': '#layanan',
-        '/en/faq': '#faq'
+        '/en/faq': '#faq',
+
+        // Detail subpages (to prevent page reload and support SPA routing)
+        '/sewa-forklift-3-ton-bandung': '#unit',
+        '/sewa-forklift-5-ton-bandung': '#unit',
+        '/sewa-forklift-7-ton-bandung': '#unit',
+        '/sewa-forklift-15-ton-bandung': '#unit',
+        '/rental-forklift-cimareme-batujajar': '#wilayah',
+        '/sewa-forklift-rancaekek': '#wilayah',
+        '/sewa-forklift-gedebage': '#wilayah',
+        '/sewa-crane-20-ton-bandung': '#crane',
+        '/sewa-crane-25-ton-bandung': '#crane',
+        '/sewa-crane-35-ton-bandung': '#crane',
+        '/sewa-crane-45-ton-bandung': '#crane',
+
+        // English subpages
+        '/en/rent-forklift-3-ton-bandung': '#unit',
+        '/en/rent-forklift-5-ton-bandung': '#unit',
+        '/en/rent-forklift-7-ton-bandung': '#unit',
+        '/en/rent-forklift-15-ton-bandung': '#unit',
+        '/en/rental-forklift-cimareme-batujajar': '#wilayah',
+        '/en/rent-forklift-rancaekek': '#wilayah',
+        '/en/rent-forklift-gedebage': '#wilayah',
+        '/en/rent-crane-20-ton-bandung': '#crane',
+        '/en/rent-crane-25-ton-bandung': '#crane',
+        '/en/rent-crane-35-ton-bandung': '#crane',
+        '/en/rent-crane-45-ton-bandung': '#crane'
     };
 
     // Helper to scroll to section
@@ -124,9 +158,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Helper to switch tab programmatically
+    function switchTab(sectionId, targetTabId) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        const btns = section.querySelectorAll('.tab-btn');
+        const contents = section.querySelectorAll('.unit-tab-content');
+        
+        btns.forEach(btn => {
+            if (btn.getAttribute('data-target') === targetTabId) {
+                btns.forEach(b => b.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                const targetEl = section.querySelector(`#${targetTabId}`) || document.getElementById(targetTabId);
+                if (targetEl) targetEl.classList.add('active');
+            }
+        });
+    }
+
     // Handle routing based on path
     function handleRoute(path, smooth = true) {
-        const cleanPath = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+        let cleanPath = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+        cleanPath = cleanPath.replace('.html', '');
+        
+        // Handle tab switching for subpages
+        if (cleanPath.includes('forklift-3-ton') || cleanPath.includes('forklift-3t')) {
+            switchTab('unit', 'unit-3t');
+        } else if (cleanPath.includes('forklift-5-ton') || cleanPath.includes('forklift-5t')) {
+            switchTab('unit', 'unit-5t');
+        } else if (cleanPath.includes('forklift-7-ton') || cleanPath.includes('forklift-7t')) {
+            switchTab('unit', 'unit-7t');
+        } else if (cleanPath.includes('forklift-15-ton') || cleanPath.includes('forklift-15t')) {
+            switchTab('unit', 'unit-15t');
+        } else if (cleanPath.includes('crane-20-ton') || cleanPath.includes('crane-20t')) {
+            switchTab('crane', 'crane-20t');
+        } else if (cleanPath.includes('crane-25-ton') || cleanPath.includes('crane-25t')) {
+            switchTab('crane', 'crane-25t');
+        } else if (cleanPath.includes('crane-35-ton') || cleanPath.includes('crane-35t')) {
+            switchTab('crane', 'crane-35t');
+        } else if (cleanPath.includes('crane-45-ton') || cleanPath.includes('crane-45t')) {
+            switchTab('crane', 'crane-45t');
+        }
+
         const selector = routes[cleanPath];
         if (selector) {
             scrollToSection(selector, smooth);
@@ -192,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (routes[cleanPath] !== undefined) {
                     const sectionHash = routes[cleanPath];
                     if (isHomepage && sameLanguage) {
-                        scrollToSection(sectionHash, true);
+                        handleRoute(cleanPath, true);
                     } else {
                         if (inEnFolder) {
                             if (cleanPath.startsWith('/en/')) {
@@ -348,26 +422,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Back to Top Logic
     const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    }
     // Parallax Scroll for Stats Numbers
     const statNumbers = document.querySelectorAll('.stat-item h3');
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        statNumbers.forEach((num, index) => {
-            // Subtle movement: alternate direction slightly for each number
-            const speed = (index + 1) * 0.1;
-            const yPos = -(scrolled * speed * 0.2);
-            // Limit movement to avoid too much jumpiness
-            const clampedY = Math.max(-30, Math.min(30, yPos));
-            num.style.transform = `translateY(${clampedY}px)`;
+    if (statNumbers && statNumbers.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            statNumbers.forEach((num, index) => {
+                // Subtle movement: alternate direction slightly for each number
+                const speed = (index + 1) * 0.1;
+                const yPos = -(scrolled * speed * 0.2);
+                // Limit movement to avoid too much jumpiness
+                const clampedY = Math.max(-30, Math.min(30, yPos));
+                num.style.transform = `translateY(${clampedY}px)`;
+            });
         });
-    });
+    }
 
     // Unit & Crane Tab Logic (Scoped to their parent section)
     const initTabs = (sectionId) => {
