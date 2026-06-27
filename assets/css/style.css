@@ -239,20 +239,23 @@ nav a:hover {
 
 .hero-desc {
     font-size: 1.2rem;
-    color: #E2E8F0 !important; /* Soft Slate 200 */
+    color: #E2E8F0 !important;
+    /* Soft Slate 200 */
     margin-bottom: 36px;
     line-height: 1.6;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-visual {
-    display: none !important; /* Hide visual SVG completely */
+    display: none !important;
+    /* Hide visual SVG completely */
 }
 
 .hero-badge-bottom {
     margin-top: 30px;
     font-size: 0.95rem;
-    color: #FDBA74 !important; /* Warm light orange for high readability on dark BG */
+    color: #FDBA74 !important;
+    /* Warm light orange for high readability on dark BG */
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -756,8 +759,7 @@ nav a:hover {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
     gap: 30px 60px;
     align-items: center;
 }
@@ -767,17 +769,9 @@ nav a:hover {
     grid-row: 1;
 }
 
-.about-features-grid {
-    grid-column: 1;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
 .about-media {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1;
     align-self: center;
     position: relative;
 }
@@ -791,7 +785,8 @@ nav a:hover {
 .about-img {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-lg); /* Clean standard rounded corners */
+    border-radius: var(--radius-lg);
+    /* Clean standard rounded corners */
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
     border: 1px solid rgba(15, 23, 42, 0.05);
     display: block;
@@ -809,7 +804,8 @@ nav a:hover {
     background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
     color: white;
     padding: 22px 28px;
-    border-radius: var(--radius); /* Clean standard rounded corners */
+    border-radius: var(--radius);
+    /* Clean standard rounded corners */
     text-align: center;
     box-shadow: 0 12px 25px rgba(234, 88, 12, 0.3);
     z-index: 5;
@@ -1907,31 +1903,31 @@ footer {
         background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('../images/hero_industrial_bg.png') no-repeat center center !important;
         background-size: cover !important;
     }
-    
+
     .hero-grid {
         display: block !important;
     }
-    
+
     .hero-content {
         text-align: left !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
     }
-    
+
     .hero-title {
         font-size: 2.1rem !important;
         line-height: 1.25 !important;
         margin-bottom: 15px;
         text-align: left !important;
     }
-    
+
     .hero-desc {
         font-size: 0.95rem;
         margin-bottom: 20px;
         text-align: left !important;
     }
-    
+
     .hero-visual {
         display: none !important;
     }
@@ -1962,13 +1958,13 @@ footer {
 
     /* Modern About Mobile styling */
     .about-section {
-        padding: 50px 0 70px !important;
+        padding: 50px 0 35px !important;
     }
 
     .about-grid {
         grid-template-columns: 1fr !important;
-        grid-template-rows: auto auto auto !important;
-        gap: 30px !important;
+        grid-template-rows: auto !important;
+        gap: 0 !important;
     }
 
     .about-text-wrapper {
@@ -1977,75 +1973,16 @@ footer {
     }
 
     .about-media {
-        grid-column: 1 !important;
-        grid-row: 2 !important;
-        margin: 15px 0 !important;
+        display: none !important;
     }
 
     .about-features-grid {
-        grid-column: 1 !important;
-        grid-row: 3 !important;
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-        margin-top: 0 !important;
-    }
-
-    .about-title {
-        font-size: 1.85rem !important;
-        margin-bottom: 15px !important;
-    }
-
-    .about-description p {
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 15px !important;
-    }
-
-    .about-feature-card {
-        padding: 15px !important;
-    }
-
-    .about-feature-icon {
-        width: 38px !important;
-        height: 38px !important;
-        font-size: 1rem !important;
-    }
-
-    .about-feature-info h3 {
-        font-size: 0.95rem !important;
-    }
-
-    .about-feature-info p {
-        font-size: 0.8rem !important;
-    }
-
-    .about-img {
-        border-radius: 16px !important;
-    }
-
-    .experience-badge {
-        bottom: -10px !important;
-        right: -10px !important;
-        padding: 16px 20px !important;
-        border-radius: var(--radius) !important;
-        border-width: 3px !important;
-    }
-
-    .badge-number {
-        font-size: 2rem !important;
-    }
-
-    .badge-label {
-        font-size: 0.65rem !important;
-        margin-top: 4px !important;
+        display: none !important;
     }
 
     /* Stats Glass Card Mobile */
     .stats-glass-card {
-        margin-top: 40px !important;
-        padding: 20px !important;
-        flex-direction: row !important;
-        justify-content: space-around !important;
+        display: none !important;
     }
 
     .stat-number {

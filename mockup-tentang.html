@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Redesign - Satria Mandiri Forklift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --accent: #EA580C;
+            --accent-light: #FFEDD5;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --bg-light: #FFFFFF;
+            --bg-alt: #F8FAFC;
+            --border: #E2E8F0;
+            --radius-lg: 24px;
+            --radius-md: 12px;
+            --shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #f0f2f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .mockup-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .mockup-header {
+            padding: 30px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .mockup-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .toggle-btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Phone Frame */
+        .phone-frame {
+            width: 375px;
+            height: 750px;
+            margin: 40px auto;
+            border: 12px solid #222;
+            border-radius: 40px;
+            overflow-y: auto;
+            background: white;
+            position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+        }
+
+        .phone-frame::-webkit-scrollbar { width: 0; }
+
+        /* Current Design (Simplified) */
+        .current-design { display: none; }
+        .current-design.active { display: block; }
+        
+        .current-section { padding: 40px 20px; }
+        .current-pre { color: var(--accent); font-weight: 700; font-size: 0.8rem; margin-bottom: 10px; }
+        .current-title { font-size: 1.8rem; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2; margin-bottom: 20px; }
+        .current-title span { background: #ffe0cc; padding: 0 4px; }
+        .current-p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+        .current-img { width: 100%; border-radius: 12px; margin-top: 20px; }
+
+        /* Proposed Design */
+        .proposed-design { display: none; padding-bottom: 40px; }
+        .proposed-design.active { display: block; }
+
+        .redesign-header {
+            padding: 40px 24px 20px;
+            background: linear-gradient(to bottom, #fff, var(--bg-alt));
+        }
+
+        .badge-trust {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .redesign-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .redesign-title span {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .redesign-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--accent-light);
+            z-index: -1;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            padding: 0 24px;
+        }
+
+        /* Image Break */
+        .visual-break {
+            position: relative;
+            margin: 20px 0;
+            padding: 0 12px;
+        }
+
+        .visual-break img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .exp-badge-float {
+            position: absolute;
+            bottom: -15px;
+            right: 25px;
+            background: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3);
+            border: 3px solid white;
+        }
+
+        .exp-num { display: block; font-size: 1.5rem; font-weight: 800; line-height: 1; }
+        .exp-lab { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; }
+
+        /* Scannable Areas */
+        .area-tags-container {
+            padding: 30px 24px 10px;
+        }
+
+        .area-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .area-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag i { color: var(--accent); font-size: 0.7rem; }
+
+        /* Modern Highlight Paragraph */
+        .highlight-box {
+            margin: 24px;
+            padding: 20px;
+            background: var(--primary);
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 5rem;
+            opacity: 0.05;
+            color: white;
+        }
+
+        .highlight-box p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-box strong { color: var(--accent-light); }
+
+        /* Desktop Mockup Section */
+        .desktop-preview {
+            padding: 60px;
+            background: white;
+            border-top: 1px solid var(--border);
+            display: none;
+        }
+
+        .desktop-preview.active { display: block; }
+
+        .desktop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .desktop-content h2 { font-size: 3rem; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.1; margin-bottom: 30px; }
+        .desktop-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; }
+
+        .desktop-visual { position: relative; }
+        .desktop-visual img { width: 100%; border-radius: 32px; box-shadow: var(--shadow); }
+    </style>
+</head>
+<body>
+
+    <div class="mockup-container">
+        <div class="mockup-header">
+            <h1>Mockup Section "Tentang Kami"</h1>
+            <p>Satria Mandiri Forklift - Redesign Concept</p>
+            <div class="view-toggle">
+                <button class="toggle-btn active" onclick="setView('mobile')">Mobile Redesign</button>
+                <button class="toggle-btn" onclick="setView('current')">Mobile Current</button>
+                <button class="toggle-btn" onclick="setView('desktop')">Desktop View</button>
+            </div>
+        </div>
+
+        <!-- MOBILE PROPOSED -->
+        <div id="proposedView" class="phone-frame proposed-design active">
+            <div class="redesign-header">
+                <div class="badge-trust">
+                    <i class="fas fa-bolt"></i> RESPON CEPAT 24/7
+                </div>
+                <h2 class="redesign-title">Layanan Rental Forklift & Crane Area <span>Bandung Raya</span></h2>
+            </div>
+
+            <p class="intro-text">
+                <strong>Satria Mandiri Forklift</strong> adalah mitra terpercaya ratusan proyek sejak 2018. Kami hadir memenuhi kebutuhan angkat beban berat dengan standar keamanan tinggi.
+            </p>
+
+            <div class="visual-break">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Forklift Unit">
+                <div class="exp-badge-float">
+                    <span class="exp-num">8+</span>
+                    <span class="exp-lab">Tahun<br>Pengalaman</span>
+                </div>
+            </div>
+
+            <div class="area-tags-container">
+                <div class="area-label">Cakupan Wilayah Strategis</div>
+                <div class="tags-wrapper">
+                    <div class="tag"><i class="fas fa-map-marker-alt"></i> Cimareme</div>
+                    <div class="tag"><i class="fas fa-map-marker-alt"></i> Batujajar</div>
+                    <div class="tag"><i class="fas fa-map-marker-alt"></i> Padalarang</div>
+                    <div class="tag"><i class="fas fa-map-marker-alt"></i> Kopo Bizpark</div>
+                    <div class="tag"><i class="fas fa-map-marker-alt"></i> Gedebage</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p>
+                    Semua operator kami memiliki <strong>sertifikasi SIO resmi</strong>, menjamin keselamatan kerja di setiap medan proyek yang kami tangani.
+                </p>
+            </div>
+        </div>
+
+        <!-- MOBILE CURRENT -->
+        <div id="currentView" class="phone-frame current-design">
+            <div class="current-section">
+                <div class="current-pre">TENTANG SATRIA MANDIRI</div>
+                <h2 class="current-title">Layanan Rental Forklift & Crane Area <span>Bandung Raya</span></h2>
+                <p class="current-p">Satria Mandiri Forklift adalah penyedia jasa sewa forklift diesel profesional yang telah menjadi mitra terpercaya bagi ratusan proyek di wilayah Bandung dan Cimahi sejak tahun 2018.</p>
+                <p class="current-p">Layanan kami mencakup berbagai kawasan industri strategis, mulai dari Cimareme, Batujajar, Padalarang, hingga area pergudangan di Kopo Bizpark dan Gedebage.</p>
+                <p class="current-p">Keunggulan utama kami terletak pada operator yang tidak hanya ahli, tetapi juga memiliki sertifikasi SIO resmi, menjamin keselamatan kerja.</p>
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" class="current-img">
+            </div>
+        </div>
+
+        <!-- DESKTOP PREVIEW -->
+        <div id="desktopView" class="desktop-preview">
+            <div class="desktop-grid">
+                <div class="desktop-content">
+                    <div class="badge-trust">8+ TAHUN PENGALAMAN</div>
+                    <h2>Layanan Rental Forklift & Crane Area Bandung Raya</h2>
+                    <p>Satria Mandiri Forklift adalah penyedia jasa sewa forklift diesel profesional yang telah menjadi mitra terpercaya bagi ratusan proyek sejak tahun 2018.</p>
+                    <div class="area-label">Wilayah Strategis</div>
+                    <div class="tags-wrapper">
+                        <div class="tag">Cimareme</div>
+                        <div class="tag">Batujajar</div>
+                        <div class="tag">Padalarang</div>
+                        <div class="tag">Kopo Bizpark</div>
+                        <div class="tag">Gedebage</div>
+                    </div>
+                </div>
+                <div class="desktop-visual">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setView(view) {
+            document.querySelectorAll('.phone-frame, .desktop-preview').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            
+            if(view === 'mobile') {
+                document.getElementById('proposedView').classList.add('active');
+                event.target.classList.add('active');
+            } else if(view === 'current') {
+                document.getElementById('currentView').classList.add('active');
+                event.target.classList.add('active');
+            } else if(view === 'desktop') {
+                document.getElementById('desktopView').classList.add('active');
+                event.target.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
