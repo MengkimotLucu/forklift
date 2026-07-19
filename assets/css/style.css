@@ -1793,8 +1793,8 @@ footer {
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    bottom: 110px;
+    right: 30px;
     width: 50px;
     height: 50px;
     background: var(--primary);
@@ -2221,8 +2221,9 @@ footer {
     }
 
     .back-to-top {
-        bottom: 20px;
-        left: 20px;
+        bottom: 85px;
+        right: 20px;
+        left: auto;
         width: 40px;
         height: 40px;
         z-index: 1500;
@@ -2235,5 +2236,58 @@ footer {
         height: 55px;
         font-size: 1.6rem;
         z-index: 2000;
+    }
+}
+
+/* SEO Unique Description Box Style */
+.seo-feature-box {
+    margin-top: 25px;
+    padding: 25px;
+    background: #F8FAFC;
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.seo-feature-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.seo-feature-text h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.seo-feature-text p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 12px !important;
+}
+
+.seo-feature-text p:last-child {
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 576px) {
+    .seo-feature-box {
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .seo-feature-icon {
+        font-size: 1.3rem;
     }
 }

@@ -118,7 +118,10 @@ function generatePage(template, spec) {
     html = html.replace(/<meta name="description"\s+content=".*?"/, `<meta name="description" content="${spec.description}"`);
 
     // 4. Update Canonical Link
-    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${spec.canonical}/"`);
+    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${spec.canonical}"`);
+
+    // 5. Clean up SEO description placeholder
+    html = html.replace(/<!-- DESKRIPSI_KHUSUS_PROYEK -->/, '');
 
     return html;
 }

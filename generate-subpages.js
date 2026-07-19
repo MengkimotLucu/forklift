@@ -23,7 +23,11 @@ const subpagesId = [
         h1: 'Sewa Forklift Diesel 3 Ton di Bandung & Cimahi',
         subtitle: 'UNIT COMPACT, SANGAT COCOK UNTUK GUDANG SEMPIT',
         desc: 'Butuh rental forklift 3 ton yang lincah dan hemat tempat untuk gudang atau pabrik Anda? Satria Mandiri Forklift menyediakan unit 3 ton prima, operator SIO, dan respon cepat 24 jam.',
-        activeTab: '3t'
+        activeTab: '3t',
+        deskripsiKhusus: `
+            <p>Forklift diesel kapasitas 3 Ton kami memiliki bodi yang compact dengan radius putar yang kecil. Karakteristik ini menjadikannya pilihan utama bagi pemilik gudang logistik, depo ekspedisi, dan pabrik manufaktur di Bandung yang memiliki koridor penyimpanan yang sempit (narrow aisle).</p>
+            <p>Meskipun ukurannya ringkas, unit 3 Ton kami dibekali mesin diesel tangguh yang sanggup mengangkat beban maksimal hingga tinggi mast 4 meter. Sangat ideal untuk aktivitas penataan barang di rak tinggi, bongkar muat palet dari dalam kontainer, serta pemindahan inventaris harian dengan konsumsi bahan bakar yang sangat efisien.</p>
+        `
     },
     {
         filename: 'sewa-forklift-5-ton-bandung.html',
@@ -33,7 +37,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Forklift Diesel 5 Ton di Bandung & Cimahi',
         subtitle: 'UNIT MEDIUM DUTY, HANDAL DI SEGALA MEDAN',
         desc: 'Rental forklift 5 ton medium duty untuk pabrik, pemindahan mesin, dan logistik berat di Bandung Raya. Hubungi kami untuk penawaran harga terbaik hari ini.',
-        activeTab: '5t'
+        activeTab: '5t',
+        deskripsiKhusus: `
+            <p>Unit forklift 5 Ton medium duty kami dirancang tangguh untuk penggunaan outdoor maupun indoor pabrik. Sangat andal untuk pemindahan mesin industri kapasitas menengah, pembongkaran muatan berat, dan operasional pabrik manufaktur di wilayah Bandung dan Cimahi.</p>
+            <p>Dengan ground clearance yang ideal dan mesin diesel bertenaga optimal, unit ini stabil digunakan pada permukaan semen halus maupun jalan berkerikil. Kapasitas 5 Ton ini menjadi solusi seimbang antara kelincahan manuver dan kekuatan angkut beban industri Anda.</p>
+        `
     },
     {
         filename: 'sewa-forklift-7-ton-bandung.html',
@@ -43,7 +51,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Forklift Diesel 7 Ton di Bandung & Cimahi',
         subtitle: 'UNIT HEAVY DUTY UNTUK PROYEK BESAR & ALAT BERAT',
         desc: 'Sewa forklift heavy duty kapasitas 7 ton untuk proyek konstruksi, pemindahan alat berat, dan mesin besar di seluruh wilayah Bandung Raya.',
-        activeTab: '7t'
+        activeTab: '7t',
+        deskripsiKhusus: `
+            <p>Untuk kebutuhan heavy duty, forklift 7 Ton kami menawarkan tenaga ekstra untuk mengangkat material konstruksi berat, struktur baja, dan relokasi mesin pabrik raksasa. Konstruksi sasis yang tebal memastikan keamanan operasional saat memindahkan beban berat di medan menantang.</p>
+            <p>Seluruh armada 7 Ton kami didukung oleh operator berpengalaman dengan sertifikasi SIO kelas atas (Kemenaker aktif) untuk menjamin keselamatan kerja. Layanan sewa ini fleksibel, mulai dari harian, shift-an, hingga sewa kontrak bulanan untuk wilayah Bandung Raya.</p>
+        `
     },
     {
         filename: 'sewa-forklift-15-ton-bandung.html',
@@ -53,7 +65,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Forklift Diesel 15 Ton di Bandung & Cimahi',
         subtitle: 'UNIT HEAVY DUTY EKSTRA, TANGGUH UNTUK BEBAN SUPER BESAR',
         desc: 'Butuh rental forklift 15 ton untuk relokasi mesin pabrik raksasa atau bongkar muat beban super berat? Kami menyediakan forklift 15 Ton prima dengan operator berpengalaman sertifikat SIO.',
-        activeTab: '15t'
+        activeTab: '15t',
+        deskripsiKhusus: `
+            <p>Armada forklift super heavy duty 15 Ton kami adalah solusi mutakhir untuk pemindahan kargo pelabuhan, komponen beton pracetak, dan permesinan industri berat. Unit ini memiliki kapasitas angkut ekstra besar dengan sistem hidrolik ganda yang memberikan kestabilan maksimal.</p>
+            <p>Karena dimensinya yang besar, pengiriman unit 15 Ton dilakukan menggunakan armada self-loader/lowbed trailer khusus ke lokasi Anda. Kami menjamin unit dalam kondisi prima untuk melayani kebutuhan proyek jangka panjang maupun jangka pendek di wilayah Bandung Raya.</p>
+        `
     },
     {
         filename: 'rental-forklift-cimareme-batujajar.html',
@@ -63,7 +79,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Forklift & Crane di Cimareme & Batujajar',
         subtitle: 'RESPON CEPAT UNTUK KAWASAN INDUSTRI BANDUNG BARAT',
         desc: 'Spesialis rental forklift diesel 3-15 Ton & Mobile Crane untuk Kawasan Industri Cimareme, Batujajar, Padalarang, dan wilayah Bandung Barat lainnya. Respon cepat, operator bersertifikat SIO.',
-        activeTab: 'all'
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Kami fokus melayani area industri strategis di Bandung Barat, meliputi Kawasan Industri Cimareme, Batujajar, hingga Padalarang. Pool terdekat kami memungkinkan mobilisasi alat berat ke lokasi proyek, pergudangan, atau pabrik Anda berlangsung dengan sangat cepat demi menghemat waktu operasional Anda.</p>
+            <p>Kami sangat memahami regulasi keselamatan kerja di kawasan industri Bandung Barat. Oleh karena itu, seluruh armada forklift diesel dan mobile crane kami memiliki sertifikat kelayakan (sertifikat Riksa Uji) dan dijalankan oleh operator dengan SIO aktif demi menjamin zero-accident di lapangan.</p>
+        `
     },
     {
         filename: 'sewa-forklift-rancaekek.html',
@@ -73,7 +93,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Forklift & Crane di Rancaekek & Cileunyi',
         subtitle: 'SIAP KIRIM CEPAT KE KAWASAN INDUSTRI RANCAEKEK',
         desc: 'Layanan rental forklift diesel & crane cepat untuk Kawasan Industri Rancaekek, Jatinangor, Cileunyi, dan sekitarnya. Unit terawat siap kerja shift atau lembur.',
-        activeTab: 'all'
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Layanan sewa forklift responsif kami hadir untuk mendukung sektor industri manufaktur di wilayah Bandung Timur. Kawasan Rancaekek dan Cileunyi didominasi oleh pabrik tekstil skala besar, industri garmen, serta kompleks pergudangan logistik yang membutuhkan mobilitas tinggi dalam bongkar muat bahan baku maupun hasil produksi.</p>
+            <p>Dengan pool armada kami yang strategis, pengiriman unit forklift diesel 3-15 Ton maupun Mobile Crane ke area Rancaekek (seperti area sekitar Kahatex, Linggar, atau Dwipapuri) dapat dilakukan dengan cepat melalui akses Tol Cileunyi. Tim mekanik dan operator kami juga siap siaga 24 jam untuk melayani sistem kerja shift maupun lembur (overtime) pabrik Anda.</p>
+        `
     },
     {
         filename: 'sewa-forklift-gedebage.html',
@@ -83,7 +107,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Forklift & Crane di Gedebage & Bandung Timur',
         subtitle: 'SPESIALIS RENTAL FORKLIFT & CRANE GUDANG GEDEBAGE & BYPASS',
         desc: 'Sewa forklift 3-15 Ton & Mobile Crane di area pergudangan Gedebage, Soekarno-Hatta, dan Bandung Timur. Respon cepat, harga transparan, operator berpengalaman.',
-        activeTab: 'all'
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Mitra andalan untuk kebutuhan logistik dan bongkar muat kontainer di area pergudangan Gedebage serta sepanjang jalur jalan Soekarno-Hatta (Bypass). Kawasan Gedebage merupakan pusat pergudangan utama di Kota Bandung, yang memerlukan armada forklift yang gesit serta mobile crane kokoh untuk memindahkan peti kemas atau barang impor-ekspor.</p>
+            <p>Kami menawarkan tarif sewa yang sangat kompetitif dengan proses administrasi yang cepat dan mudah. Baik untuk bongkar muat semen harian, logistik e-commerce, maupun proyek konstruksi infrastruktur di Bandung Timur, armada kami siap dikirim langsung dari pool terdekat ke gudang Anda.</p>
+        `
     },
     {
         filename: 'sewa-crane-20-ton-bandung.html',
@@ -93,7 +121,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Mobile Crane 20 Ton di Bandung & Cimahi',
         subtitle: 'UNIT MOBILE, SANGAT COCOK UNTUK PROYEK & INSTALASI MESIN SEDANG',
         desc: 'Butuh rental mobile crane 20 ton yang gesit dan tangguh untuk proyek konstruksi atau pemindahan mesin sedang? Kami menyediakan unit crane 20 ton prima dengan operator berpengalaman.',
-        activeTab: 'crane-20t'
+        activeTab: 'crane-20t',
+        deskripsiKhusus: `
+            <p>Mobile Crane kapasitas 20 Ton kami sangat fleksibel untuk pekerjaan erection balok beton, pemasangan tiang pancang ringan, maupun instalasi mesin pabrik berukuran sedang. Dengan setup unit di lapangan yang tergolong cepat, proyek konstruksi Anda dapat berjalan lebih efisien.</p>
+            <p>Unit crane 20 Ton kami tergolong lincah di jalanan Bandung Raya dan mampu menjangkau proyek perkotaan dengan boom teleskopik yang andal. Operator kami telah dibekali sertifikat SIO kelas crane mobil aktif dari Kemenaker untuk memastikan aspek K3 terpenuhi.</p>
+        `
     },
     {
         filename: 'sewa-crane-25-ton-bandung.html',
@@ -103,7 +135,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Mobile Crane 25 Ton di Bandung & Cimahi',
         subtitle: 'KAPASITAS MEDIUM, UTAMA UNTUK ERECTION BAJA & JEMBATAN',
         desc: 'Penyedia rental truck crane/mobile crane 25 ton prima untuk pemasangan baja, konstruksi jembatan, dan bongkar muat kontainer di Bandung Raya.',
-        activeTab: 'crane-25t'
+        activeTab: 'crane-25t',
+        deskripsiKhusus: `
+            <p>Unit Truck Crane 25 Ton kami dilengkapi dengan panjang boom optimal untuk kebutuhan pemasangan rangka baja ruko, konstruksi jembatan sekunder, dan pemindahan beban berat outdoor yang membutuhkan jangkauan tinggi. Kestabilan outrigger pada unit ini menjamin keamanan pengangkatan ekstrim.</p>
+            <p>Kami menyewakan unit crane 25 Ton ini lengkap dengan aksesoris rigging penunjang (seperti shackle, webbing sling, wire rope) yang teruji kekuatannya. Sangat cocok untuk proyek infrastruktur di area Bandung, Cimahi, dan sekitarnya dengan opsi sewa harian atau bulanan.</p>
+        `
     },
     {
         filename: 'sewa-crane-35-ton-bandung.html',
@@ -113,7 +149,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Rough Terrain Crane 35 Ton di Bandung & Cimahi',
         subtitle: 'UNIT ROUGH TERRAIN, TANGGUH DI MEDAN BERLUMPUR & OFF-ROAD',
         desc: 'Butuh sewa rough terrain crane 35 ton untuk medan kasar atau area berlumpur? Satria Mandiri Forklift menyediakan crane 35 Ton prima dengan ban off-road besar.',
-        activeTab: 'crane-35t'
+        activeTab: 'crane-35t',
+        deskripsiKhusus: `
+            <p>Rough Terrain Crane 35 Ton kami dibekali roda penggerak off-road khusus dan ban besar bermotif pacul. Karakteristik ini menjadikannya pilihan terbaik untuk proyek infrastruktur jalan, jembatan, atau area proyek baru yang medannya masih tanah basah, bergelombang, atau berlumpur.</p>
+            <p>Meskipun handal di medan kasar, unit ini juga presisi dalam pengangkatan material berkat sistem kendali hidrolik modern. Sangat direkomendasikan untuk proyek pembukaan lahan industri baru di daerah Bandung Barat maupun Bandung Regency.</p>
+        `
     },
     {
         filename: 'sewa-crane-45-ton-bandung.html',
@@ -123,7 +163,11 @@ const subpagesId = [
         h1: 'Jasa Sewa Mobile Crane 45 Ton di Bandung & Cimahi',
         subtitle: 'UNIT HEAVY DUTY UNTUK KONSTRUKSI BESAR & MESIN RAKSASA',
         desc: 'Layanan sewa truck crane 45 ton heavy duty dengan stabilizer kokoh dan boom panjang hingga 42 meter untuk proyek konstruksi skala besar di Bandung.',
-        activeTab: 'crane-45t'
+        activeTab: 'crane-45t',
+        deskripsiKhusus: `
+            <p>Dengan kapasitas beban maksimal 45 Ton dan jangkauan teleskopik boom hingga 42 meter, unit ini adalah andalan utama proyek gedung bertingkat, pemasangan komponen girder beton, serta evakuasi alat berat di area Bandung dan Cimahi. Kaki outrigger hidrolik kokoh memastikan distribusi berat yang aman.</p>
+            <p>Karena merupakan armada super heavy duty, penyewaan unit ini selalu didampingi oleh survei lokasi terlebih dahulu dari tim ahli kami untuk memastikan daya dukung tanah dan ruang manuver aman. Hubungi kami untuk penawaran harga sewa crane 45 Ton terbaik.</p>
+        `
     }
 ];
 
@@ -136,7 +180,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift Rental 3 Ton in Bandung & Cimahi',
         subtitle: 'COMPACT UNIT, BEST SUITED FOR NARROW WAREHOUSES',
         desc: 'Need an agile and space-saving 3-ton forklift for your warehouse or factory? Satria Mandiri Forklift provides well-maintained 3-ton units, SIO operators, and 24/7 fast support.',
-        activeTab: '3t'
+        activeTab: '3t',
+        deskripsiKhusus: `
+            <p>Our 3 Ton diesel forklift has a compact body and a tight turning radius. This configuration makes it the top choice for warehouse owners, logistics companies, and manufacturing sites in Bandung looking to maximize vertical storage space within narrow aisles.</p>
+            <p>Despite its small footprint, our 3T forklift features a highly efficient diesel engine capable of hoisting loads up to a mast height of 4 meters. It is ideal for loading and unloading standard shipping containers, moving palletized stock, and handling daily inventory with zero hassle.</p>
+        `
     },
     {
         filename: 'en/rent-forklift-5-ton-bandung.html',
@@ -146,7 +194,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift Rental 5 Ton in Bandung & Cimahi',
         subtitle: 'MEDIUM-DUTY DIESEL FORKLIFT, VERSATILE & RELIABLE',
         desc: 'Rent a 5-ton medium-duty diesel forklift for factories, machinery moving, and heavy logistics in Bandung Raya. Contact us for the best rates today.',
-        activeTab: '5t'
+        activeTab: '5t',
+        deskripsiKhusus: `
+            <p>Our 5 Ton medium-duty diesel forklift is built tough for both outdoor and indoor factory environments. It is highly reliable for relocating mid-sized industrial machinery, unloading heavy raw materials, and supporting daily operations in Bandung and Cimahi's manufacturing sectors.</p>
+            <p>With an ideal ground clearance and optimal engine power, this unit maintains great stability on concrete warehouse floors as well as gravel roads. It offers the perfect balance between lift capacity and site maneuverability.</p>
+        `
     },
     {
         filename: 'en/rent-forklift-7-ton-bandung.html',
@@ -156,7 +208,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift Rental 7 Ton in Bandung & Cimahi',
         subtitle: 'HEAVY-DUTY DIESEL FORKLIFT FOR BIG PROJECTS & EQUIPMENT',
         desc: 'Rent heavy-duty 7-ton forklifts for construction projects, heavy equipment handling, and large machinery across the entire Bandung Raya region.',
-        activeTab: '7t'
+        activeTab: '7t',
+        deskripsiKhusus: `
+            <p>For heavy-duty industrial needs, our 7 Ton forklift delivers extra lifting power to handle structural steel, concrete pipes, and large factory machinery. The thick reinforced chassis guarantees safe operation under heavy loads in demanding site conditions.</p>
+            <p>All our 7 Ton rental units are operated by highly experienced crew holding active Kemenaker SIO licenses. We offer flexible rental options, including daily, shift-based, or long-term monthly contracts to fit your project budget in Bandung Raya.</p>
+        `
     },
     {
         filename: 'en/rent-forklift-15-ton-bandung.html',
@@ -166,7 +222,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift Rental 15 Ton in Bandung & Cimahi',
         subtitle: 'SUPER HEAVY-DUTY UNIT, CAPABLE OF HANDLING MASSIVE LOADS',
         desc: 'Need a powerful 15-ton forklift for factory relocations or extra-heavy lifting? Satria Mandiri Forklift provides well-maintained 15T units with professional SIO certified operators.',
-        activeTab: '15t'
+        activeTab: '15t',
+        deskripsiKhusus: `
+            <p>Our super heavy-duty 15 Ton diesel forklift is the ultimate solution for port cargo handling, precast concrete structures, and relocating heavy industrial machinery. This unit features dual hydraulic systems for maximum load stabilization during critical lifts.</p>
+            <p>Due to its substantial dimensions, the 15 Ton unit is transported directly to your site using dedicated lowbed/self-loader trailers. We ensure our machines are in peak operational health to serve long-term or short-term industrial operations across Bandung Raya.</p>
+        `
     },
     {
         filename: 'en/rental-forklift-cimareme-batujajar.html',
@@ -176,7 +236,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift & Crane Rental in Cimareme & Batujajar',
         subtitle: 'QUICK RESPONSE FOR WEST BANDUNG INDUSTRIAL AREAS',
         desc: 'Specialized 3-15 ton diesel forklift & Mobile Crane rentals for Cimareme Industrial Zone, Batujajar, Padalarang, and other West Bandung locations. Fast response, SIO certified crew.',
-        activeTab: 'all'
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>We focus on serving strategic industrial hubs in West Bandung, spanning Cimareme Industrial Zone, Batujajar, and Padalarang. Having local fleets nearby ensures rapid mobilization and delivery to your site or warehouse, minimizing operational downtime.</p>
+            <p>We are fully aligned with safety standards in West Bandung's industrial zones. Thus, all our diesel forklifts and mobile cranes hold active safety certificates (Riksa Uji) and are manned by certified SIO crew to guarantee a zero-accident project site.</p>
+        `
     },
     {
         filename: 'en/rent-forklift-rancaekek.html',
@@ -186,7 +250,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift & Crane Rental in Rancaekek & Cileunyi',
         subtitle: 'PROMPT DELIVERY TO RANCAEKEK INDUSTRIAL ZONE',
         desc: 'Fast diesel forklift & crane rental services for Rancaekek Industrial Area, Jatinangor, Cileunyi, and surrounding zones. Well-maintained units ready for shifts or overtime.',
-        activeTab: 'all'
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Our responsive forklift and crane rental service is designed to support the manufacturing sectors in East Bandung. The Rancaekek and Cileunyi zones are dominated by large-scale textile mills, garment factories, and logistics warehouses requiring high-capacity cargo handling.</p>
+            <p>Thanks to our strategic local pool, dispatching 3-15 Ton diesel forklifts or Mobile Cranes to Rancaekek (such as Kahatex, Linggar, or Dwipapuri areas) is highly efficient via the Cileunyi toll road. Our maintenance team and operators are available 24/7 to support shift schedules or factory overtime work.</p>
+        `
     },
     {
         filename: 'en/rent-forklift-gedebage.html',
@@ -196,7 +264,11 @@ const subpagesEn = [
         h1: 'Diesel Forklift & Crane Rental in Gedebage & East Bandung',
         subtitle: 'WAREHOUSE FORKLIFT & CRANE SPECIALIST IN GEDEBAGE & BYPASS',
         desc: 'Rent 3-15 ton forklifts & mobile cranes in the warehousing hub of Gedebage, Soekarno-Hatta, and East Bandung. Quick delivery, transparent pricing, and experienced crew.',
-        activeTab: 'all'
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Your reliable partner for logistics and container handling in the Gedebage warehousing hub and along the Soekarno-Hatta bypass. Gedebage stands as the main warehousing center in Bandung, demanding highly agile forklifts and heavy-duty cranes to move import-export cargo.</p>
+            <p>We offer highly competitive rental rates with simple paperwork. Whether you need daily container unloading, e-commerce logistics support, or infrastructure project handling in East Bandung, our fleet is ready for immediate dispatch from the nearest yard.</p>
+        `
     },
     {
         filename: 'en/rent-crane-20-ton-bandung.html',
@@ -206,7 +278,11 @@ const subpagesEn = [
         h1: 'Mobile Crane Rental 20 Ton in Bandung & Cimahi',
         subtitle: 'COMPACT MOBILE CRANE, BEST SUITED FOR MEDIUM PROJECTS & MACHINERY',
         desc: 'Need a mobile and efficient 20-ton crane for construction projects or machinery installation? Satria Mandiri Forklift provides prime 20T crane units with professional operators.',
-        activeTab: 'crane-20t'
+        activeTab: 'crane-20t',
+        deskripsiKhusus: `
+            <p>Our 20 Ton Mobile Crane is highly flexible for steel beam erection, light piling, and medium machinery installations. Quick setup on site ensures high efficiency for your construction schedule.</p>
+            <p>This 20T mobile crane is highly maneuverable on Bandung's main roads and can easily access urban job sites. Our crew holds active mobile crane SIO licenses from Kemenaker to meet all workplace safety requirements.</p>
+        `
     },
     {
         filename: 'en/rent-crane-25-ton-bandung.html',
@@ -216,7 +292,11 @@ const subpagesEn = [
         h1: 'Mobile Crane Rental 25 Ton in Bandung & Cimahi',
         subtitle: 'MEDIUM CAPACITY, IDEAL FOR STEEL ERECTION & BRIDGE CONSTRUCTION',
         desc: 'Rent a 25-ton truck crane/mobile crane for steel installation, bridge work, and container handling in Bandung. Contact us for rates today.',
-        activeTab: 'crane-25t'
+        activeTab: 'crane-25t',
+        deskripsiKhusus: `
+            <p>Our 25 Ton Truck Crane features an optimal boom length for steel frame erections, bridge construction, and heavy outdoor loading that requires high vertical reach. Outrigger stability guarantees safe operations during extreme lifts.</p>
+            <p>We rent out the 25T crane fully equipped with certified rigging accessories (such as shackles, webbing slings, and wire ropes). It is perfectly suited for infrastructure projects across Bandung and Cimahi with daily or monthly options.</p>
+        `
     },
     {
         filename: 'en/rent-crane-35-ton-bandung.html',
@@ -224,9 +304,13 @@ const subpagesEn = [
         title: 'Rent 35 Ton Crane Bandung & Cimahi | Satria Mandiri Forklift & Crane',
         description: 'Rent rough terrain 35-ton crane in Bandung & Cimahi. Perfect for muddy off-road sites. SIO licensed crew.',
         h1: 'Rough Terrain Crane Rental 35 Ton in Bandung & Cimahi',
-        subtitle: 'ROUGH TERRAIN CRANE, CAPABLE OF MEDLEY MEDIAN & OFF-ROAD SITES',
+        subtitle: 'ROUGH terrain CRANE, CAPABLE OF MEDLEY MEDIAN & OFF-ROAD SITES',
         desc: 'Need a durable 35-ton crane for rough terrains or off-road infrastructure? Satria Mandiri Forklift provides well-maintained rough terrain cranes with experienced operators.',
-        activeTab: 'crane-35t'
+        activeTab: 'crane-35t',
+        deskripsiKhusus: `
+            <p>Equipped with specialized off-road tyres and 4WD, our 35 Ton Rough Terrain Crane is the best option for road construction, bridges, or new project sites with muddy, uneven, or wet terrain.</p>
+            <p>While extremely capable on rough grounds, this unit maintains absolute precision during lifts thanks to modern hydraulic controls. It is highly recommended for site clearing and development projects in West Bandung or Bandung Regency.</p>
+        `
     },
     {
         filename: 'en/rent-crane-45-ton-bandung.html',
@@ -236,7 +320,11 @@ const subpagesEn = [
         h1: 'Mobile Crane Rental 45 Ton in Bandung & Cimahi',
         subtitle: 'HEAVY-DUTY MOBILE CRANE FOR LARGE SCALE CONSTRUCTION',
         desc: 'Specialized 45-ton truck crane rental with boom length up to 42 meters and robust stabilizers for heavy machinery moving and massive infrastructure.',
-        activeTab: 'crane-45t'
+        activeTab: 'crane-45t',
+        deskripsiKhusus: `
+            <p>Featuring a maximum load capacity of 45 Tons and a telescopic boom reaching up to 42 meters, this heavy-duty mobile crane is the main choice for high-rise buildings, girder installations, and heavy equipment recovery in Bandung. Heavy hydraulic stabilizers ensure secure weight distribution.</p>
+            <p>As a super heavy-duty machine, renting our 45T crane always includes a preliminary site survey by our technical team to verify ground bearing capacity and clearance. Contact us today to receive our best 45 Ton crane rental rates.</p>
+        `
     }
 ];
 
@@ -251,7 +339,7 @@ function generateHTML(template, spec, isEn) {
     html = html.replace(/<meta name="description"\s+content=".*?"/, `<meta name="description" content="${spec.description}"`);
 
     // 3. Update Canonical Link
-    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${spec.canonical}/"`);
+    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${spec.canonical}"`);
 
     // 4. Update Hero content
     html = html.replace(/<span class="hero-subtitle">.*?<\/span>/, `<span class="hero-subtitle">${spec.subtitle}</span>`);
@@ -301,6 +389,23 @@ function generateHTML(template, spec, isEn) {
             // For forklift capacity tabs ('3t', '5t', '7t', '15t')
             html = html.replace(/<body id="home">/, '<body id="home" data-scroll-target="#unit">');
         }
+    }
+
+    // 7. Inject Unique SEO Description
+    if (spec.deskripsiKhusus) {
+        const boxTitle = isEn ? 'Special Service Focus' : 'Fokus Layanan Khusus';
+        const boxIcon = spec.activeTab === 'all' ? 'fa-map-marker-alt' : 'fa-info-circle';
+        const seoBox = `
+                        <div class="seo-feature-box">
+                            <div class="seo-feature-icon"><i class="fas ${boxIcon}"></i></div>
+                            <div class="seo-feature-text">
+                                <h4>${boxTitle}</h4>
+                                ${spec.deskripsiKhusus}
+                            </div>
+                        </div>`;
+        html = html.replace(/<!-- DESKRIPSI_KHUSUS_PROYEK -->/, seoBox);
+    } else {
+        html = html.replace(/<!-- DESKRIPSI_KHUSUS_PROYEK -->/, '');
     }
 
     return html;
