@@ -339,7 +339,8 @@ function generateHTML(template, spec, isEn) {
     html = html.replace(/<meta name="description"\s+content=".*?"/, `<meta name="description" content="${spec.description}"`);
 
     // 3. Update Canonical Link
-    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${spec.canonical}"`);
+    const canonUrl = spec.canonical.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
+    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${canonUrl}"`);
 
     // 4. Update Hero content
     html = html.replace(/<span class="hero-subtitle">.*?<\/span>/, `<span class="hero-subtitle">${spec.subtitle}</span>`);

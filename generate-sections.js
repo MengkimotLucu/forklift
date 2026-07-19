@@ -118,7 +118,8 @@ function generatePage(template, spec) {
     html = html.replace(/<meta name="description"\s+content=".*?"/, `<meta name="description" content="${spec.description}"`);
 
     // 4. Update Canonical Link
-    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${spec.canonical}"`);
+    const canonUrl = spec.canonical.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
+    html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${canonUrl}"`);
 
     // 5. Clean up SEO description placeholder
     html = html.replace(/<!-- DESKRIPSI_KHUSUS_PROYEK -->/, '');
