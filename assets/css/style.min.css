@@ -168,12 +168,14 @@ header .container {
 }
 
 .logo {
-    font-size: 1.35rem;
-    font-weight: 900;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
     letter-spacing: -.02em;
     display: inline-flex;
     align-items: center;
-    gap: 8px
+    gap: 6px;
+    white-space: nowrap
 }
 
 .area-card h3 i,
@@ -1013,18 +1015,27 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 60px
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+    gap: 40px;
+    margin-bottom: 50px
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 30px
+    }
 }
 
 .footer-logo {
-    font-size: 1.5rem;
-    font-weight: 900;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
     margin-bottom: 20px;
     display: inline-flex;
-    gap: 8px;
-    color: var(--primary)
+    gap: 6px;
+    color: var(--primary);
+    white-space: nowrap
 }
 
 .footer-text {
@@ -1764,17 +1775,19 @@ footer {
     }
 
     .logo {
-        font-size: .95rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        line-height: 1.1
+        font-size: 1.05rem;
+        font-weight: 800;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        line-height: 1.2;
+        white-space: nowrap
     }
 
     .logo span {
-        font-size: .8rem;
-        display: block
+        font-size: inherit;
+        display: inline
     }
 
     .about-features-grid,

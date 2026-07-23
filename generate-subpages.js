@@ -102,9 +102,9 @@ const subpagesId = [
     {
         filename: 'sewa-forklift-gedebage.html',
         canonical: 'https://satriaforklift.com/sewa-forklift-gedebage',
-        title: 'Rental Forklift Gedebage Murah & Terpercaya - Satria Mandiri',
+        title: 'Sewa & Rental Forklift Gedebage Bandung - Satria Mandiri',
         description: 'Sewa forklift 3-15 Ton & Mobile Crane di area pergudangan Gedebage, Soekarno-Hatta, dan Bandung Timur. Respon cepat, harga kompetitif, operator berpengalaman.',
-        h1: 'Jasa Sewa & Rental Forklift Gedebage Bandung Raya',
+        h1: 'Sewa & Rental Forklift Gedebage Bandung',
         subtitle: 'SPESIALIS RENTAL FORKLIFT & CRANE GUDANG GEDEBAGE & BYPASS',
         desc: 'Sewa forklift 3-15 Ton & Mobile Crane di area pergudangan Gedebage, Soekarno-Hatta, dan Bandung Timur. Respon cepat, harga transparan, operator berpengalaman.',
         activeTab: 'all',
@@ -167,6 +167,34 @@ const subpagesId = [
         deskripsiKhusus: `
             <p>Dengan kapasitas beban maksimal 45 Ton dan jangkauan teleskopik boom hingga 42 meter, unit ini adalah andalan utama proyek gedung bertingkat, pemasangan komponen girder beton, serta evakuasi alat berat di area Bandung dan Cimahi. Kaki outrigger hidrolik kokoh memastikan distribusi berat yang aman.</p>
             <p>Karena merupakan armada super heavy duty, penyewaan unit ini selalu didampingi oleh survei lokasi terlebih dahulu dari tim ahli kami untuk memastikan daya dukung tanah dan ruang manuver aman. Hubungi kami untuk penawaran harga sewa crane 45 Ton terbaik.</p>
+        `
+    },
+    {
+        filename: 'sewa-forklift-terdekat.html',
+        canonical: 'https://satriaforklift.com/sewa-forklift-terdekat',
+        title: 'Jasa Sewa & Rental Forklift Terdekat di Bandung Raya - Satria Mandiri',
+        description: 'Mencari sewa forklift terdekat di Bandung Raya? Satria Mandiri Forklift siap melayani jasa sewa forklift terdekat harian mingguan dengan harga murah bersahabat.',
+        h1: 'Jasa Sewa & Rental Forklift Terdekat di Bandung Raya',
+        subtitle: 'SOLUSI RENTAL FORKLIFT TERDEKAT CEPAT DAN BERPENGALAMAN',
+        desc: 'Kami menawarkan jasa sewa forklift terdekat untuk segala kebutuhan pemindahan mesin pabrik, konstruksi, dan logistik pergudangan di Bandung Raya.',
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Jika Anda memerlukan layanan <strong>sewa forklift terdekat</strong> yang responsif dan siap siaga 24 jam, Satria Mandiri Forklift adalah mitra terpercaya yang tepat. Kami melayani <strong>jasa sewa forklift</strong> untuk berbagai sektor industri dan konstruksi di wilayah Bandung, Cimahi, dan sekitarnya dengan proses pengiriman armada yang cepat langsung dari pool terdekat ke lokasi kerja Anda.</p>
+            <p>Semua unit kami terawat baik untuk memastikan kenyamanan dan kelancaran pekerjaan Anda. Dapatkan penawaran harga <strong>rental forklift terdekat</strong> terbaik untuk sewa harian, mingguan, maupun jangka panjang dengan operator berpengalaman bersertifikat SIO aktif.</p>
+        `
+    },
+    {
+        filename: 'sio-operator-forklift.html',
+        canonical: 'https://satriaforklift.com/sio-operator-forklift',
+        title: 'Syarat & Cara Mengurus SIO Operator Forklift Resmi | Satria Mandiri',
+        description: 'Panduan lengkap cara mengurus SIO forklift resmi. Pelajari syarat menjadi operator forklift bersertifikat SIO Kemnaker untuk jaminan keselamatan kerja.',
+        h1: 'Syarat & Cara Mengurus SIO Operator Forklift Resmi',
+        subtitle: 'EDUKASI & KESELAMATAN KERJA ALAT BERAT',
+        desc: 'Pelajari apa itu sertifikat SIO forklift, syarat dokumen, tahapan sertifikasi operator forklift Kemnaker, dan pentingnya lisensi resmi bagi operator.',
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>Seorang <strong>operator forklift adalah</strong> profesional yang bertanggung jawab penuh atas pengoperasian unit forklift secara aman. Untuk meminimalkan risiko kecelakaan kerja di pergudangan atau pabrik, Kemnaker mewajibkan setiap pengemudi memiliki <strong>sertifikat forklift</strong> resmi berupa Surat Izin Operasional (SIO).</p>
+            <p>Untuk mengurus <strong>sio forklift</strong>, calon operator harus mengikuti pelatihan pembinaan K3 khusus dari PJK3 yang ditunjuk secara resmi. Syarat utamanya meliputi usia minimal 18 tahun, memiliki ijazah pendidikan, surat keterangan sehat, pas foto, serta lulus ujian teori dan praktik pengoperasian unit forklift.</p>
         `
     }
 ];
@@ -324,6 +352,34 @@ const subpagesEn = [
         deskripsiKhusus: `
             <p>Featuring a maximum load capacity of 45 Tons and a telescopic boom reaching up to 42 meters, this heavy-duty mobile crane is the main choice for high-rise buildings, girder installations, and heavy equipment recovery in Bandung. Heavy hydraulic stabilizers ensure secure weight distribution.</p>
             <p>As a super heavy-duty machine, renting our 45T crane always includes a preliminary site survey by our technical team to verify ground bearing capacity and clearance. Contact us today to receive our best 45 Ton crane rental rates.</p>
+        `
+    },
+    {
+        filename: 'en/rent-forklift-nearest.html',
+        canonical: 'https://satriaforklift.com/en/rent-forklift-nearest',
+        title: 'Nearest Forklift Rental Services in Bandung Raya - Satria Mandiri',
+        description: 'Looking for the nearest forklift rental in Bandung? Satria Mandiri offers professional forklift hires at competitive prices. Contact us for daily or weekly rentals.',
+        h1: 'Nearest Forklift Rental & Hires in Bandung Raya',
+        subtitle: 'FAST RESPONSIVE FORKLIFT RENTAL SERVICES NEARBY',
+        desc: 'We provide professional nearby forklift rental services for all factory machine moving, logistics, and heavy duty projects in Bandung.',
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>When searching for a <strong>nearest forklift rental</strong> in Bandung and Cimahi, look no further than Satria Mandiri. We provide fast response times and SIO-certified operators to ensure your heavy lifting tasks are executed with maximum safety and efficiency.</p>
+            <p>Our fleet comprises 3-15 Ton diesel forklifts ready to be dispatched from our nearest local pools. Contact us today to secure the best rates for short-term or long-term hires.</p>
+        `
+    },
+    {
+        filename: 'en/rent-forklift-sio-operator.html',
+        canonical: 'https://satriaforklift.com/en/rent-forklift-sio-operator',
+        title: 'Official SIO Forklift Operator License Guide | Satria Mandiri',
+        description: 'Learn about the requirements and certification process to obtain an official SIO forklift operator license in Indonesia.',
+        h1: 'How to Obtain an Official SIO Forklift Operator License',
+        subtitle: 'SAFETY EDUCATION & HEAVY MACHINERY LICENSE GUIDE',
+        desc: 'Understand the certification pathway, required documents, and role of certified forklift operators under Kemnaker regulations.',
+        activeTab: 'all',
+        deskripsiKhusus: `
+            <p>An official <strong>sio forklift</strong> license is a mandatory requirement under Kemnaker regulation to operate any industrial forklift. A certified <strong>operator forklift adalah</strong> key to minimizing occupational hazards and maintaining warehouse safety standards.</p>
+            <p>Obtaining a <strong>sertifikat forklift</strong> requires completing a certified training course, passing theoretical tests, and passing practical evaluations of machinery control.</p>
         `
     }
 ];

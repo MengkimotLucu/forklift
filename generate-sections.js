@@ -43,9 +43,9 @@ const sectionsId = [
         filename: 'wilayah.html',
         target: '#wilayah',
         canonical: 'https://satriaforklift.com/wilayah',
-        title: 'Rental Forklift 7 Ton Bandung & Wilayah Layanan | Satria Mandiri',
+        title: 'Rental Forklift 7 Ton & Wilayah Layanan Bandung | Satria Mandiri',
         description: 'Layanan sewa forklift & crane cepat untuk Cimareme, Batujajar, Padalarang, Kopo, Gedebage, Rancaekek, dan area Bandung Raya lainnya.',
-        h1: 'Rental Forklift 7 Ton Bandung & Wilayah Layanan Sewa Forklift'
+        h1: 'Rental Forklift 7 Ton & Wilayah Layanan Bandung'
     },
     {
         filename: 'layanan.html',
