@@ -329,7 +329,7 @@ const subpagesEn = [
 ];
 
 // Helper to replace text in templates
-function generateHTML(template, spec, isEn) {
+function generateHTML(template, spec, altSpec, isEn) {
     let html = template;
 
     // 1. Update Title tag
@@ -341,6 +341,15 @@ function generateHTML(template, spec, isEn) {
     // 3. Update Canonical Link
     const canonUrl = spec.canonical.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
     html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${canonUrl}"`);
+
+    // Update Hreflang links
+    const idUrl = isEn ? altSpec.canonical : spec.canonical;
+    const enUrl = isEn ? spec.canonical : altSpec.canonical;
+    const cleanIdUrl = idUrl.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
+    const cleanEnUrl = enUrl.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
+    
+    html = html.replace(/<link rel="alternate"\s+hreflang="id"\s+href=".*?"\s*\/?>/, `<link rel="alternate" hreflang="id" href="${cleanIdUrl}" />`);
+    html = html.replace(/<link rel="alternate"\s+hreflang="en"\s+href=".*?"\s*\/?>/, `<link rel="alternate" hreflang="en" href="${cleanEnUrl}" />`);
 
     // 4. Update Hero content
     html = html.replace(/<span class="hero-subtitle">.*?<\/span>/, `<span class="hero-subtitle">${spec.subtitle}</span>`);
@@ -413,19 +422,19 @@ function generateHTML(template, spec, isEn) {
 }
 
 // Generate ID Subpages
-subpagesId.forEach(spec => {
+subpagesId.forEach((spec, idx) => {
     const destPath = path.join(__dirname, spec.filename);
     ensureDir(destPath);
-    const content = generateHTML(templateId, spec, false);
+    const content = generateHTML(templateId, spec, subpagesEn[idx], false);
     fs.writeFileSync(destPath, content, 'utf8');
     console.log(`Generated: ${spec.filename}`);
 });
 
 // Generate EN Subpages
-subpagesEn.forEach(spec => {
+subpagesEn.forEach((spec, idx) => {
     const destPath = path.join(__dirname, spec.filename);
     ensureDir(destPath);
-    const content = generateHTML(templateEn, spec, true);
+    const content = generateHTML(templateEn, spec, subpagesId[idx], true);
     fs.writeFileSync(destPath, content, 'utf8');
     console.log(`Generated: ${spec.filename}`);
 });

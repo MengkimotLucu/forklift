@@ -105,7 +105,7 @@ const sectionsEn = [
     }
 ];
 
-function generatePage(template, spec) {
+function generatePage(template, spec, altSpec) {
     let html = template;
 
     // 1. Inject data-scroll-target into body tag
@@ -121,6 +121,15 @@ function generatePage(template, spec) {
     const canonUrl = spec.canonical.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
     html = html.replace(/<link rel="canonical"\s+href=".*?"/, `<link rel="canonical" href="${canonUrl}"`);
 
+    // Update Hreflang links
+    const idUrl = spec.canonical.startsWith('https://satriaforklift.com/en/') ? altSpec.canonical : spec.canonical;
+    const enUrl = spec.canonical.startsWith('https://satriaforklift.com/en/') ? spec.canonical : altSpec.canonical;
+    const cleanIdUrl = idUrl.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
+    const cleanEnUrl = enUrl.replace('https://satriaforklift.com', 'https://www.satriaforklift.com');
+    
+    html = html.replace(/<link rel="alternate"\s+hreflang="id"\s+href=".*?"\s*\/?>/, `<link rel="alternate" hreflang="id" href="${cleanIdUrl}" />`);
+    html = html.replace(/<link rel="alternate"\s+hreflang="en"\s+href=".*?"\s*\/?>/, `<link rel="alternate" hreflang="en" href="${cleanEnUrl}" />`);
+
     // 5. Clean up SEO description placeholder
     html = html.replace(/<!-- DESKRIPSI_KHUSUS_PROYEK -->/, '');
 
@@ -128,19 +137,19 @@ function generatePage(template, spec) {
 }
 
 // Generate Indonesian files
-sectionsId.forEach(spec => {
+sectionsId.forEach((spec, idx) => {
     const destPath = path.join(__dirname, spec.filename);
     ensureDir(destPath);
-    const content = generatePage(templateId, spec);
+    const content = generatePage(templateId, spec, sectionsEn[idx]);
     fs.writeFileSync(destPath, content, 'utf8');
     console.log(`Generated: ${spec.filename}`);
 });
 
 // Generate English files
-sectionsEn.forEach(spec => {
+sectionsEn.forEach((spec, idx) => {
     const destPath = path.join(__dirname, spec.filename);
     ensureDir(destPath);
-    const content = generatePage(templateEn, spec);
+    const content = generatePage(templateEn, spec, sectionsId[idx]);
     fs.writeFileSync(destPath, content, 'utf8');
     console.log(`Generated: ${spec.filename}`);
 });
